@@ -75,11 +75,12 @@ public class RoundDegreeView extends View {
         mInnerArcPaint = new Paint();
         mInnerArcPaint.setAntiAlias(true);
         mInnerArcPaint.setColor(Color.RED);
-        mInnerArcPaint.setStyle(Paint.Style.STROKE);
+        mInnerArcPaint.setStyle(Paint.Style.STROKE);// 中空式或充满式
         mInnerArcPaint.setStrokeWidth(mInnerStrokeWidth);
         mInnerArcPaint.setStrokeJoin(Paint.Join.ROUND);
-        mInnerArcPaint.setStrokeCap(Paint.Cap.ROUND);
-        mInnerArcPaint.setPathEffect(new CornerPathEffect(10));
+        mInnerArcPaint.setStrokeCap(Paint.Cap.ROUND); //笔触的样式
+        mInnerArcPaint.setPathEffect(new CornerPathEffect(10));//设置转角看起来不会很尖锐
+        //设定是否使用图像抖动处理，会使绘制出来的图片颜色更加平滑和饱满，图像更加清晰
         mInnerArcPaint.setDither(true);
 
         mArrowPaint = new Paint();
@@ -139,7 +140,7 @@ public class RoundDegreeView extends View {
         canvas.drawArc(mInnerRect,-210,240,false,mInnerArcPaint);
 
         //rotate 是对坐标的旋转
-        canvas.rotate(arrowRotateDegree,mArcCenterX,mArcCenterY);
+        canvas.rotate(arrowRotateDegree,mArcCenterX, mArcCenterY);
         canvas.drawPath(arrow,mArrowPaint);
     }
 

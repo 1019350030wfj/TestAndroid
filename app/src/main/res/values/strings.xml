@@ -6,4 +6,15 @@
     <string name="other_channel">其他频道</string>
     <string name="edit">编辑</string>
     <string name="finish">完成</string>
+
+    <!-- Menu names -->
+    <string name="business_card">Business Card</string>
+    <string name="calendar">Calendar</string>
+    <string name="cloud">Cloud</string>
+    <string name="facebook">Facebook</string>
+    <string name="key">Key</string>
+    <string name="mail">Mail</string>
+    <string name="profile">Profile</string>
+    <string name="tag">Tag</string>
+    <string name="voice_search">Voice Search</string>
 </resources>
