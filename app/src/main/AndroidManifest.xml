@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".customview.round_degree.RoundDegreeActivity"
+            android:name=".framework.ui.base.HomeActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
             <intent-filter>
