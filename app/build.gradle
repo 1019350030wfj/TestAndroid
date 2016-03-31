@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.jayden.testandroid"
-        minSdkVersion 21
+        minSdkVersion 17
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -26,7 +26,7 @@ dependencies {
     compile 'com.android.support:design:23.2.0'
 
     compile 'com.jcodecraeer:xrecyclerview:1.2.6'
-
+    compile 'com.android.support:percent:23.2.0'
 
     // retrofit2 + okhttp3
     compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
