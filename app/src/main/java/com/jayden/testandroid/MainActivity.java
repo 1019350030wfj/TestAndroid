@@ -49,4 +49,10 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        //这个方法，说明View的宽高已经测量完了。 不过这个方法会调用多次
+    }
 }

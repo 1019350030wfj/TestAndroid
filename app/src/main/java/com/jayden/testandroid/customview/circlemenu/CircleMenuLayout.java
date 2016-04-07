@@ -129,8 +129,7 @@ public class CircleMenuLayout extends ViewGroup {
 
             childWidth = child.getMeasuredWidth();
             childHeight = child.getMeasuredHeight();
-            left = Math
-                    .round((float) (((circleWidth / 2.0) - childWidth / 2.0) + radius
+            left = Math.round((float) (((circleWidth / 2.0) - childWidth / 2.0) + radius
                             * Math.cos(Math.toRadians(localAngle))));
             top = Math
                     .round((float) (((circleHeight / 2.0) - childHeight / 2.0) + radius
