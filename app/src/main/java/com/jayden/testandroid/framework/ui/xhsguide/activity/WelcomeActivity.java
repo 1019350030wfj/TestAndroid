@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentActivity;
 import com.jayden.testandroid.R;
 
 /**
+ * XhsWelcomeAnim
  * Created by Jayden on 2016/4/7.
  * Email : 1570713698@qq.com
  */
