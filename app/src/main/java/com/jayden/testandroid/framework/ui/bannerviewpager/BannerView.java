@@ -83,6 +83,12 @@ public class BannerView extends FrameLayout implements ViewPager.OnPageChangeLis
         this.context = context;
     }
 
+    @Override
+    protected void onDetachedFromWindow() {
+        cancelTimer();
+        super.onDetachedFromWindow();
+    }
+
     private void init() {
         viewPager.setAdapter(null);
         carouselLayout.removeAllViews();
