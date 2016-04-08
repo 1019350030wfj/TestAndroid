@@ -11,7 +11,7 @@ import android.util.AttributeSet;
  */
 public class ChildViewPager extends ViewPager {
 
-    public boolean mIsLockScroll = false;
+    public static boolean mIsLockScoll = false;
 
     public ChildViewPager(Context context) {
         super(context);

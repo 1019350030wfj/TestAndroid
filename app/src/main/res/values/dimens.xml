@@ -5,4 +5,13 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <!-- text_base -->
+    <dimen name="text_12">12sp</dimen>
+    <dimen name="text_14">14sp</dimen>
+    <dimen name="text_17">17sp</dimen>
+    <dimen name="text_18">18sp</dimen>
+    <dimen name="text_20">20sp</dimen>
+
+
+    <dimen name="margin_nomal">10dp</dimen>
 </resources>

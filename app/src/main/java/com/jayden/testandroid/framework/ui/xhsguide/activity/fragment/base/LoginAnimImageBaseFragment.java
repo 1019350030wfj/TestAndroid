@@ -1,7 +1,5 @@
 package com.jayden.testandroid.framework.ui.xhsguide.activity.fragment.base;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.os.Bundle;
@@ -10,6 +8,8 @@ import android.support.v4.app.Fragment;
 
 import com.jayden.testandroid.utils.ConvertUtils;
 import com.jayden.testandroid.utils.DvAppUtil;
+import com.nineoldandroids.animation.AnimatorSet;
+import com.nineoldandroids.animation.ObjectAnimator;
 
 /**
  * Created by Jayden on 2016/4/7.
@@ -25,7 +25,7 @@ public class LoginAnimImageBaseFragment extends Fragment {
     public int mNewScrollBitmapHeight= 0;
     public int mImageViewWidth = 0;
 
-    public AnimatorSet mAnimatorSEt;
+    public AnimatorSet mAnimatorSet;
     public ObjectAnimator mObjectAnimator;
 
     float mScaleWidth = 0;
