@@ -52,7 +52,7 @@ public class WelcomeActivity extends FragmentActivity{
     }
 
     private void setClick() {
-        vp_parent.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        vp_parent.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i2) {
             }

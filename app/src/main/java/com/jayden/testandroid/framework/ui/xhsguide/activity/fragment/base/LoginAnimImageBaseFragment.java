@@ -43,17 +43,17 @@ public class LoginAnimImageBaseFragment extends Fragment {
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
         int newWidth = ivWidth;
-        int newHeight = (int) ((float) height) * newWidth / width;
+        int newHeight = (int) ((float)height) * newWidth / width;
 
-        if (type == BITMAP_SCROLL) {
+        if(type == BITMAP_SCROLL){
             mNewScrollBitmapHeight = newHeight;
         }
 
-        mScaleHeight = newHeight / height;
-        mScaleWidth = newWidth / width;
+        mScaleWidth = ((float) newWidth) / width;
+        mScaleHeight = ((float) newHeight) / height;
 
         Matrix matrix = new Matrix();
-        matrix.postScale(newWidth,newHeight);
+        matrix.postScale(mScaleWidth, mScaleHeight);
         Bitmap resizedBitmap = Bitmap.createBitmap(bitmap, 0, 0, width,height, matrix, true);
         return resizedBitmap;
     }

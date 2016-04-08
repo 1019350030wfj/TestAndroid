@@ -60,7 +60,7 @@ public class WelcomAnimFragment extends Fragment {
         imageViewPager.setAdapter(mImageFragmentStatePagerAdapter);
         imageViewPager.mIsLockScoll = true;
 
-        imageViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        imageViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i2) { }
 
@@ -115,7 +115,7 @@ public class WelcomAnimFragment extends Fragment {
         /**
          * 文字动画层滑动监听
          */
-        textViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        textViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i2) { }
 
