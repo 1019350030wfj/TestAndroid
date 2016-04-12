@@ -16,7 +16,7 @@ import com.jayden.pulltorefresh.view.vary.VaryViewHelper;
  */
 public class DefaultLoadViewFactory implements ILoadViewFactory {
     @Override
-    public IloadMoreView madeLoadMoreView() {
+    public ILoadMoreView madeLoadMoreView() {
         return null;
     }
 
@@ -87,7 +87,7 @@ public class DefaultLoadViewFactory implements ILoadViewFactory {
     /**
      * 加载更多默认布局
      */
-    private static class LoadMoreHelper implements IloadMoreView {
+    private static class LoadMoreHelper implements ILoadMoreView {
 
         protected TextView footView;
 

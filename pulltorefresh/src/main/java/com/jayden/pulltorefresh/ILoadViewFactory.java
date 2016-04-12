@@ -9,7 +9,7 @@ import android.view.View;
  */
 public interface ILoadViewFactory {
 
-    IloadMoreView madeLoadMoreView();
+    ILoadMoreView madeLoadMoreView();
 
     ILoadingView madeLoadingView();
 
@@ -54,7 +54,7 @@ public interface ILoadViewFactory {
     /**
      * 列表控件，上啦加载更多的布局
      */
-    public static interface IloadMoreView{
+    public static interface ILoadMoreView {
 
         /**
          * 初始化
