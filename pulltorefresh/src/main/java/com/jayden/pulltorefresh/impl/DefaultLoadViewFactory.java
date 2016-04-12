@@ -17,12 +17,12 @@ import com.jayden.pulltorefresh.view.vary.VaryViewHelper;
 public class DefaultLoadViewFactory implements ILoadViewFactory {
     @Override
     public ILoadMoreView madeLoadMoreView() {
-        return null;
+        return new LoadMoreHelper();
     }
 
     @Override
     public ILoadingView madeLoadingView() {
-        return null;
+        return new LoadingViewHelper();
     }
 
     /**
