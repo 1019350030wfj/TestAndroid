@@ -3,8 +3,10 @@ package com.jayden.testandroid.pulltorefresh;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jayden.pulltorefresh.IDataAdapter;
 import com.jayden.testandroid.R;
@@ -32,9 +34,15 @@ public class ReBooksAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         TextView textView = (TextView) holder.itemView;
         textView.setText(books.get(position).getName());
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(),"position = " + position,Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
