@@ -14,8 +14,6 @@ import com.jayden.testandroid.R;
 import java.util.List;
 
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
-import in.srain.cube.views.ptr.PtrFrameLayout;
-import in.srain.cube.views.ptr.header.MaterialHeader;
 
 /**
  * Created by Jayden on 2016/4/12.
@@ -31,14 +29,14 @@ public class UltraRecyclerViewActivity extends Activity {
         setContentView(R.layout.activity_test_ultra_recyclerview);
 
         PtrClassicFrameLayout mPtrFrameLayout = (PtrClassicFrameLayout) findViewById(R.id.rotate_header_list_view_frame);
-        MaterialHeader header = new MaterialHeader(getApplicationContext());
-        header.setLayoutParams(new PtrFrameLayout.LayoutParams(-1,-2));
-        header.setPadding(0,dipToPx(getApplicationContext(),15),0,dipToPx(getApplicationContext(),10));
-        header.setPtrFrameLayout(mPtrFrameLayout);
-        mPtrFrameLayout.setLoadingMinTime(800);
-        mPtrFrameLayout.setDurationToCloseHeader(800);
-        mPtrFrameLayout.setHeaderView(header);
-        mPtrFrameLayout.addPtrUIHandler(header);
+//        MaterialHeader header = new MaterialHeader(getApplicationContext());
+//        header.setLayoutParams(new PtrFrameLayout.LayoutParams(-1,-2));
+//        header.setPadding(0,dipToPx(getApplicationContext(),15),0,dipToPx(getApplicationContext(),10));
+//        header.setPtrFrameLayout(mPtrFrameLayout);
+//        mPtrFrameLayout.setLoadingMinTime(800);
+//        mPtrFrameLayout.setDurationToCloseHeader(800);
+//        mPtrFrameLayout.setHeaderView(header);
+//        mPtrFrameLayout.addPtrUIHandler(header);,new DefaultLoadViewFactory().madeLoadingView(),null
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
@@ -49,6 +47,8 @@ public class UltraRecyclerViewActivity extends Activity {
         listMVCHelper.setDataSource(new BooksDataSource());
         //设置适配器
         listMVCHelper.setAdapter(new ReBooksAdapter(this));
+
+        listMVCHelper.setAutoLoadMore(false);
 
         //加载数据
         listMVCHelper.refresh();

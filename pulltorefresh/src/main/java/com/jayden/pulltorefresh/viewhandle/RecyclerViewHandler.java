@@ -79,12 +79,12 @@ public class RecyclerViewHandler implements ViewHandle {
         }
 
         private boolean isScollBottom(RecyclerView recyclerView) {
-            return !isCanScollVertically(recyclerView);
+            return !isCanScollVertically(recyclerView); //不能向上滑动
         }
 
         private boolean isCanScollVertically(RecyclerView recyclerView) {
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-                return ViewCompat.canScrollVertically(recyclerView,1) || recyclerView.getScaleY() < recyclerView.getHeight();
+                return ViewCompat.canScrollVertically(recyclerView,1) || recyclerView.getScrollY() < recyclerView.getHeight();
             } else {
                 return ViewCompat.canScrollVertically(recyclerView,1);
             }

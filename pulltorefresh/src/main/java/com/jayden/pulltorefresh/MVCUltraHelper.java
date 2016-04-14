@@ -16,6 +16,7 @@ import in.srain.cube.views.ptr.PtrHandler;
  * Email : 1570713698@qq.com
  */
 public class MVCUltraHelper<T> extends MVCHelper<T> {
+
     public MVCUltraHelper(PtrClassicFrameLayout refreshView) {
         super(new RefreshView(refreshView));
     }

@@ -378,6 +378,14 @@ public class MVCHelper<T> {
         }
     }
 
+    /**
+     * 设置是否自动加载更多
+     * @param autoLoadMore
+     */
+    public void setAutoLoadMore(boolean autoLoadMore) {
+        this.autoLoadMore = autoLoadMore;
+    }
+
     private OnScrollBottomListener onScrollBottomListener = new OnScrollBottomListener() {
         @Override
         public void onScrollBottom() {
