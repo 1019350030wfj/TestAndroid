@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">jaydenrich</string>
+    <string name="loading_no_network">你的网络开小差啦，点击刷新</string>
 </resources>
