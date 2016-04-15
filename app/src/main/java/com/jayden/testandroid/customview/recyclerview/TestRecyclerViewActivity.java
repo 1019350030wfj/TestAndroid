@@ -3,14 +3,17 @@ package com.jayden.testandroid.customview.recyclerview;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.jayden.testandroid.BaseRecyclerAdapter;
 import com.jayden.testandroid.R;
 import com.jayden.testandroid.statusbar.StatusBarCompat;
+import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.util.ArrayList;
@@ -47,15 +50,48 @@ public class TestRecyclerViewActivity extends Activity {
 
         //set pull refresh unable
         mRecyclerView.setPullRefreshEnabled(true);
+        mRecyclerView.setRefreshProgressStyle(ProgressStyle.BallSpinFadeLoader);
+        mRecyclerView.setLoadingMoreEnabled(true);
+        mRecyclerView.setLaodingMoreProgressStyle(ProgressStyle.BallScale);
 
         //setAdapter
         mDatas = new ArrayList<String>();
         for(int i = 0; i < 15 ;i++){
             mDatas.add("item" + (i + mDatas.size()) );
         }
-        TestRecyclerAdapter adapter = new TestRecyclerAdapter();
+        final TestRecyclerAdapter adapter = new TestRecyclerAdapter();
+        adapter.setOnRecyclerItemClickListener(new BaseRecyclerAdapter.OnRecyclerItemClickListener<String>() {
+            @Override
+            public void onItemClicked(View item, String data, int position) {
+                Log.d("jayden","Position = " + position);
+            }
+        });
         adapter.setData(mDatas);
+
+        header.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                adapter.addData("add item");
+            }
+        });
         mRecyclerView.setAdapter(adapter);
+
+        mRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            public void onRefresh() {
+//                try {
+//                    Thread.sleep(2000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//                mRecyclerView.refreshComplete();
+            }
+
+            @Override
+            public void onLoadMore() {
+
+            }
+        });
     }
 
 

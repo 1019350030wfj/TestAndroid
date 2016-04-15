@@ -1,4 +1,4 @@
-package com.jayden.testandroid.customview.recyclerview;
+package com.jayden.jaydenrich.view.test;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.jayden.testandroid.BaseRecyclerAdapter;
-import com.jayden.testandroid.R;
+import com.jayden.jaydenrich.R;
+import com.jayden.jaydenrich.view.adapter.BaseRecyclerAdapter;
 
 
 /**
@@ -17,7 +17,7 @@ public class TestRecyclerAdapter extends BaseRecyclerAdapter<String,TestRecycler
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder(View.inflate(parent.getContext(), R.layout.item,null));
+        return new ViewHolder(View.inflate(parent.getContext(), 0,null));
     }
 
     @Override

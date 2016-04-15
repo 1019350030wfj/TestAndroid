@@ -13,7 +13,7 @@ import java.util.List;
 public class BooksDataSource implements IDataSource<List<Book>>,IDataCacheLoader<List<Book>> {
 
     private int page = 1;
-    private int maxPage = 10;
+    private int maxPage = 2;
 
     /**
      * 加载缓存<br>
