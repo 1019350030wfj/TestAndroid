@@ -3,8 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.jayden.testandroid.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/BarChart"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="BarChart"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/LineChart"
+        android:orderInCategory="100"
+        android:title="LineChart"></item>
+    <item
+        android:id="@+id/PieChart"
+        android:orderInCategory="100"
+        android:title="PieChart"></item>
+    <item
+        android:id="@+id/ScatterChart"
+        android:orderInCategory="100"
+        android:title="ScatterChart"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/RadarChart"
+        android:orderInCategory="100"
+        android:title="RadarChart"
         app:showAsAction="never" />
 </menu>

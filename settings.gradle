@@ -1,1 +1,1 @@
-include ':app', ':pulltorefresh', ':jaydenrich'
+include ':app', ':pulltorefresh', ':jaydenrich', ':MPChartLib'
