@@ -21,8 +21,14 @@ public class TestRecyclerAdapter extends BaseRecyclerAdapter<String,TestRecycler
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.mTextView.setText(mData.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onItemClicked(holder.itemView,getData().get(position),position);
+            }
+        });
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -32,7 +38,7 @@ public class TestRecyclerAdapter extends BaseRecyclerAdapter<String,TestRecycler
         public ViewHolder(View itemView) {
             super(itemView);
             mTextView = (TextView) itemView.findViewById(R.id.text);
-            itemView.setOnClickListener(this);
+//            itemView.setOnClickListener(this);
         }
 
         @Override

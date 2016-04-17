@@ -97,7 +97,7 @@ public abstract class HFAdapter extends RecyclerView.Adapter {
             FrameLayout frameLayout = new FrameLayout(parent.getContext());
             //占满全屏
             frameLayout.setLayoutParams(new ViewGroup.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
+                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
             ));
             return new HeaderFooterViewHolder(frameLayout);
         }
