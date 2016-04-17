@@ -1,5 +1,6 @@
 package com.jayden.testandroid.mpchart;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,9 +10,12 @@ import android.view.ViewGroup;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.LimitLine;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.jayden.testandroid.R;
 
@@ -68,13 +72,42 @@ public class BarCharFragment extends Fragment {
 
     public void show(){
         dataset= new BarDataSet(entries,"");
-        dataset.setColors(ColorTemplate.COLORFUL_COLORS);
+        dataset.setColors(ColorTemplate.VORDIPLOM_COLORS);
         BarData data=new BarData(labels,dataset);
-        LimitLine line=new LimitLine(10f);
+        data.setValueFormatter(new PercentFormatter());
         barChart.setData(data);
+        barChart.setDrawValueAboveBar(false);
 //        barChart.animateXY(5000,5000);
 //        barChart.animateX(5000);
         barChart.animateY(3000);
+        XAxis xAxis = barChart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setDrawGridLines(false);
+        xAxis.setDrawLabels(true);
+        YAxis yAxis = barChart.getAxisRight();
+        yAxis.setEnabled(false);
+        YAxis leftAxis = barChart.getAxisLeft();
+        leftAxis.setDrawGridLines(false);
+        leftAxis.setAxisMinValue(0);
+        leftAxis.setLabelCount(7,true);
+
+        LimitLine ll = new LimitLine(14f, "Critical Blood Pressure");
+        ll.setLineColor(Color.RED);
+        ll.setLineWidth(4f);
+        ll.setTextColor(Color.BLACK);
+        ll.setTextSize(12f);
+// .. and more styling options
+
+        leftAxis.addLimitLine(ll);
+
+//        ArrayList<Integer> colors = new ArrayList<Integer>();
+//        // 饼图颜色
+//        colors.add(Color.rgb(205, 205, 205));
+//        colors.add(Color.rgb(114, 188, 223));
+//        colors.add(Color.rgb(255, 123, 124));
+//        colors.add(Color.rgb(57, 135, 200));
+//        barChart.setColors(colors);
+        barChart.setDrawHighlightArrow(true);
         barChart.setDescription("hello MPandroidChart");
     }
 }
