@@ -42,6 +42,7 @@ public class UltraActivity extends Activity {
         //设置适配器
         listMVCHelper.setAdapter(new BooksAdapter(this));
 
+        listMVCHelper.setAutoLoadMore(false);
         //加载数据
         listMVCHelper.refresh();
 
