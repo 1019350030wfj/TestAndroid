@@ -11,4 +11,14 @@ import java.util.List;
  */
 public interface IFuliView extends IBaseView {
     void onSuccess(List<Meizi> meizis);
+
+    void onLoadMoreSuccess(List<Meizi> meizis);
+
+    void onRefreshEnable(boolean isEnable);
+
+    void onLoadMoreEnable(boolean isEnable);
+
+    void loadMoreError();
+
+    void refreshError();
 }

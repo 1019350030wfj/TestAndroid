@@ -3,11 +3,11 @@ package com.jayden.jaydenrichdemo.presenter;
 import android.content.Context;
 
 import com.jayden.jaydenrich.model.dao.HttpHandler;
-import com.jayden.jaydenrich.presenter.BasePresenter;
+import com.jayden.jaydenrich.presenter.AbsRecyclerPresenter;
+import com.jayden.jaydenrich.view.iview.IRecyclerView;
 import com.jayden.jaydenrichdemo.model.bean.BaseBean;
 import com.jayden.jaydenrichdemo.model.bean.Meizi;
 import com.jayden.jaydenrichdemo.model.dao.ApiService;
-import com.jayden.jaydenrichdemo.view.iview.IFuliView;
 
 import java.util.List;
 
@@ -15,17 +15,16 @@ import okhttp3.Request;
 
 /**
  * Created by Jayden on 2016/4/19.
- * Email : 1570713698@qq.com
  */
-public class FuliPresenter extends BasePresenter<IFuliView> {
+public class RecyclePresenterImpl extends AbsRecyclerPresenter {
 
     private int mPage;
-
-    public FuliPresenter(Context context, IFuliView iView) {
+    public RecyclePresenterImpl(Context context, IRecyclerView iView) {
         super(context, iView);
         mPage = 1;
     }
 
+    @Override
     public void refresh() {
         ApiService.getFuli(mContext, 10, 1, new HttpHandler.ResultCallback<BaseBean<List<Meizi>>>() {
             @Override
@@ -44,6 +43,7 @@ public class FuliPresenter extends BasePresenter<IFuliView> {
         });
     }
 
+    @Override
     public void loadMore() {
         ApiService.getFuli(mContext, 10, mPage + 1, new HttpHandler.ResultCallback<BaseBean<List<Meizi>>>() {
             @Override

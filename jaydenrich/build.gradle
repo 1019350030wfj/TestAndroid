@@ -27,7 +27,7 @@ dependencies {
 
     compile 'com.google.code.gson:gson:2.6.2'
 
-    compile ('com.jcodecraeer:xrecyclerview:1.2.6') {
+    compile ('com.jcodecraeer:xrecyclerview:1.2.7') {
         exclude module:'recyclerview-v7',group:'com.android.support'
     }
     compile project(':pulltorefresh')

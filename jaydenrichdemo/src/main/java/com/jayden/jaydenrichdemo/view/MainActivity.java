@@ -8,10 +8,10 @@ import android.widget.TextView;
 
 import com.jayden.jaydenrich.view.activity.BaseFragmentActivity;
 import com.jayden.jaydenrichdemo.R;
-import com.jayden.jaydenrichdemo.view.fragment.MVCUltraFragment;
-import com.jayden.jaydenrichdemo.view.fragment.XRecyclerFragment;
-import com.jayden.jaydenrichdemo.view.fragment.Fragment3;
 import com.jayden.jaydenrichdemo.view.fragment.Fragment4;
+import com.jayden.jaydenrichdemo.view.fragment.MVCUltraFragment;
+import com.jayden.jaydenrichdemo.view.fragment.RecyclerFragmentImpl;
+import com.jayden.jaydenrichdemo.view.fragment.XRecyclerFragment;
 
 public class MainActivity extends BaseFragmentActivity implements View.OnClickListener{
 
@@ -19,7 +19,7 @@ public class MainActivity extends BaseFragmentActivity implements View.OnClickLi
 
     private MVCUltraFragment fragment1;
     private XRecyclerFragment fragment2;
-    private Fragment3 fragment3;
+    private RecyclerFragmentImpl fragment3;
     private Fragment4 fragment4;
 
     // 我的
@@ -78,7 +78,7 @@ public class MainActivity extends BaseFragmentActivity implements View.OnClickLi
         if (savedInstanceState != null) {
             fragment1 = (MVCUltraFragment) findFragmentByTag(MVCUltraFragment.class.getSimpleName());
             fragment2 = (XRecyclerFragment) findFragmentByTag(XRecyclerFragment.class.getSimpleName());
-            fragment3 = (Fragment3) findFragmentByTag(Fragment3.class.getSimpleName());
+            fragment3 = (RecyclerFragmentImpl) findFragmentByTag(RecyclerFragmentImpl.class.getSimpleName());
             fragment4 = (Fragment4) findFragmentByTag(Fragment4.class.getSimpleName());
             selected_pos = savedInstanceState.getInt(SELECT_POS);
         }
@@ -89,7 +89,7 @@ public class MainActivity extends BaseFragmentActivity implements View.OnClickLi
             fragment2 = new XRecyclerFragment();
         }
         if (fragment3 == null) {
-            fragment3 = new Fragment3();
+            fragment3 = new RecyclerFragmentImpl();
         }
         if (fragment4 == null) {
             fragment4 = new Fragment4();
@@ -118,7 +118,7 @@ public class MainActivity extends BaseFragmentActivity implements View.OnClickLi
                 changeFragment(fragment2, XRecyclerFragment.class.getSimpleName());
                 break;
             case R.id.ll_shop:
-                changeFragment(fragment3, Fragment3.class.getSimpleName());
+                changeFragment(fragment3, RecyclerFragmentImpl.class.getSimpleName());
                 break;
             case R.id.ll_person:
                 changeFragment(fragment4, Fragment4.class.getSimpleName());
