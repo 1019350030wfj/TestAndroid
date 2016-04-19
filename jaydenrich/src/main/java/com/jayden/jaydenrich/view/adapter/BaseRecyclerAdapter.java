@@ -1,5 +1,6 @@
 package com.jayden.jaydenrich.view.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -11,6 +12,13 @@ public abstract class BaseRecyclerAdapter<T,VH extends RecyclerView.ViewHolder> 
     protected List<T> mData;
     protected OnRecyclerItemClickListener<T> mListener;
     protected int itemHeight;
+
+    protected Context mContext;
+
+    public BaseRecyclerAdapter(Context context) {
+        super();
+        this.mContext = context;
+    }
 
     @Override
     public int getItemCount() {

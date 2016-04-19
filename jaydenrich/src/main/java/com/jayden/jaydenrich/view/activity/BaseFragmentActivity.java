@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 
-import com.jayden.jaydenrich.view.fragment.BaseFragment;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -79,23 +78,23 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
         this.mResId = mResId;
     }
 
-    public final BaseFragment findFragmentByTag(int resId, String tag) {
+    public final Fragment findFragmentByTag(int resId, String tag) {
         Log.d("jayden","findFragmentByTag  resId " + resId + " tag = " + tag);
-        return (BaseFragment) this.mFragmentManager.findFragmentByTag(resId + "@" + tag);
+        return (Fragment) this.mFragmentManager.findFragmentByTag(resId + "@" + tag);
     }
 
-    public final BaseFragment findFragmentByTag(String tag) {
+    public final Fragment findFragmentByTag(String tag) {
         return findFragmentByTag(this.mResId, tag);
     }
 
-    public final BaseFragment changeFragment(BaseFragment fragment, String tag) {
+    public final Fragment changeFragment(Fragment fragment, String tag) {
         return changeFragment(this.mResId, fragment, tag);
     }
 
-    public final BaseFragment changeFragment(int resId, BaseFragment fragment,
+    public final Fragment changeFragment(int resId, Fragment fragment,
                                              String tag) {
         FragmentTransaction ft = this.mFragmentManager.beginTransaction();
-        BaseFragment exitFragment = null;
+        Fragment exitFragment = null;
         String exitTag = (String) this.mCurrentFragments.get(Integer
                 .valueOf(resId));
 
@@ -129,7 +128,7 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
         return fragment;
     }
 
-    public void onCreateAnimation(int resId, BaseFragment fragment, BaseFragment exitFragment, FragmentTransaction ft, boolean b) {
+    public void onCreateAnimation(int resId, Fragment fragment, Fragment exitFragment, FragmentTransaction ft, boolean b) {
 
     }
 }

@@ -10,11 +10,11 @@ import com.jayden.jaydenrich.view.iview.IBaseView;
  */
 public abstract class BasePresenter<T extends IBaseView> {
 
-    protected Context context;
+    protected Context mContext;
     protected T iView;
 
     public BasePresenter(Context context, T iView) {
-        this.context = context;
+        this.mContext = context;
         this.iView = iView;
     }
 }

@@ -14,14 +14,17 @@ import android.view.ViewGroup;
 
 import com.jayden.jaydenrich.presenter.BasePresenter;
 
+import butterknife.ButterKnife;
+
 public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
 
     protected View mContentView;//内容区域
-    protected T presenter;
+    protected T mPresenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(getLayoutResId(), container, false);
+        ButterKnife.bind(this, view);
         initPresenter();
         return view;
     }
@@ -55,6 +58,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        ButterKnife.unbind(this);
     }
 
     @Override

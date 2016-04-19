@@ -5,4 +5,9 @@
         <item name="android:layout_height">@dimen/fine_line_height</item>
         <item name="android:background">@color/color_dividing_line</item>
     </style>
+
+    <!-- ImageView宽高比相等 -->
+    <declare-styleable name="HWRadioImageView">
+        <attr name="hwRadio" format="float" />
+    </declare-styleable>
 </resources>

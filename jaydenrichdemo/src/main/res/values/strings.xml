@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">JaydenRichDemo</string>
+
+    <string name="index">首页</string>
+    <string name="group">颜值圈</string>
+    <string name="shop">购美</string>
+    <string name="person">我的</string>
+
+    <string name="girl">girl</string>
+
+</resources>

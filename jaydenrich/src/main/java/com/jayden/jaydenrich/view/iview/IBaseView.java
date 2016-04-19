@@ -7,5 +7,4 @@ package com.jayden.jaydenrich.view.iview;
  */
 public interface IBaseView {
 
-    void initView();
 }

@@ -128,7 +128,6 @@ public abstract class BaseTitleFragment extends Fragment {
      * @param titleBar
      */
     public void initTitleBar(TitleBar titleBar){
-
     }
 
     public TitleBar getTitleBar() {

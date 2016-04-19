@@ -1,5 +1,6 @@
 package com.jayden.jaydenrich.view.test;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,10 @@ import com.jayden.jaydenrich.view.adapter.BaseRecyclerAdapter;
  * Created by Jayden on 2016/3/9.
  */
 public class TestRecyclerAdapter extends BaseRecyclerAdapter<String,TestRecyclerAdapter.ViewHolder> {
+
+    public TestRecyclerAdapter(Context context) {
+        super(context);
+    }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
