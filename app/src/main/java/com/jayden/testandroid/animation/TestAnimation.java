@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -43,6 +44,30 @@ public class TestAnimation extends Activity implements View.OnClickListener{
         mImage.setOnClickListener(this);
     }
 
+    private RotateAnimation rotateAnimation;
+    private RotateAnimation stopAnimation;
+
+    private void startAnim() {
+        if (rotateAnimation == null) {
+            rotateAnimation = new RotateAnimation(0, -180,
+                    Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF,
+                    0.5f);
+            rotateAnimation.setDuration(500);
+            rotateAnimation.setFillAfter(true);
+        }
+        mImage.startAnimation(rotateAnimation);
+    }
+
+    private void stopAnim() {
+        if (stopAnimation == null) {
+            stopAnimation = new RotateAnimation(-180, 0,
+                    Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF,
+                    0.5f);
+            stopAnimation.setDuration(500);
+            stopAnimation.setFillAfter(true);
+        }
+        mImage.startAnimation(stopAnimation);
+    }
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -62,12 +87,12 @@ public class TestAnimation extends Activity implements View.OnClickListener{
             }
             case R.id.button3: {
                 //rotate
-
+                startAnim();
                 break;
             }
             case R.id.button4: {
                 //scale
-
+                stopAnim();
                 break;
             }
             case R.id.button5: {

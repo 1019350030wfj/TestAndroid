@@ -31,7 +31,7 @@ public abstract class BaseTitleFragment extends Fragment {
         //标题栏
         int headLayoutId = onCreateTitleBar();
         if (headLayoutId > 0) {
-            View headView = inflater.inflate(headLayoutId,null);
+            View headView = inflater.inflate(headLayoutId,rootView,false);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT);
             rootView.addView(headView,params);

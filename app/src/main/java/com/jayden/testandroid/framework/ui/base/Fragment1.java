@@ -23,4 +23,9 @@ public class Fragment1 extends BaseFragment {
         textView.setText("fragment1");
         return view;
     }
+
+    @Override
+    protected int getLayoutId() {
+        return 0;
+    }
 }
