@@ -23,6 +23,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.android.support:design:23.2.0'
+    compile 'com.android.support:cardview-v7:23.+'
 
     compile 'com.squareup.picasso:picasso:2.5.2'
 
@@ -54,4 +55,8 @@ dependencies {
 
     compile project(':pulltorefresh')
     compile project(':MPChartLib')
+
+    //video play lib
+    compile 'com.github.danylovolokh:video-player-manager:0.2.0'
+    compile 'com.github.danylovolokh:list-visibility-utils:0.2.0'
 }

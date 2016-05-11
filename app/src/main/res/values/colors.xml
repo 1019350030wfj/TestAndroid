@@ -16,4 +16,6 @@
 
     <color name="chb_text_color">#ff909090</color>
     <color name="tab_message">#67da9f</color>
+
+    <color name="video_place_holder_color">#cccccc</color>
 </resources>
