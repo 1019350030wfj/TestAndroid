@@ -18,4 +18,7 @@
     <color name="tab_message">#67da9f</color>
 
     <color name="video_place_holder_color">#cccccc</color>
+
+    <!--最前两位是颜色厚度, 00透明, FF全黑-->
+    <color name="page_background">#99323232</color>
 </resources>

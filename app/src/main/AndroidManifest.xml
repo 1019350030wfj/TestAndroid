@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".video.MainActivity"
+            android:name=".framework.ui.canvas.TestCanvasApi"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -26,6 +26,33 @@
         <activity android:name=".MainActivity" />
 
         <service android:name=".customview.floatview.TopFloatService"/>
+
+        <!-- 以下两个是测试从web启动app， 下面的mainActivity要作为应用的路口Activity -->
+        <activity
+            android:name=".weblauncher.WebIntentActivity"
+            android:theme="@style/Theme.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".video.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="jayden" android:host="testandroid.app" android:pathPrefix="/openwith"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -1,11 +1,14 @@
 package com.jayden.testandroid.video;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.jayden.testandroid.R;
 
@@ -32,6 +35,25 @@ public class MainActivity extends AppCompatActivity {
                     .beginTransaction()
                     .replace(R.id.container,VideoListFragment.newInstance(VideoListFragment.LOCAL))
                     .commit();
+        }
+
+        init();
+    }
+
+    private void init() {
+        Toast.makeText(this,"启动成功",Toast.LENGTH_LONG).show();
+        Intent intent = getIntent();
+        String action = intent.getAction();
+        if (Intent.ACTION_VIEW.equals(action)) {
+            Uri uri = intent.getData();
+            if (uri != null) {
+                String luckyURL = uri.getQueryParameter("url");
+                Intent web = new Intent();
+                web.setAction("android.intent.action.VIEW");
+                Uri content_url = Uri.parse(luckyURL);
+                web.setData(content_url);
+                startActivity(web);
+            }
         }
     }
 
