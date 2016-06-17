@@ -73,4 +73,9 @@
         <item name="android:layout_height">20dp</item>
         <item name="android:scaleType">fitCenter</item>
     </style>
+
+    <style name="NotificationAnim">
+        <item name="android:windowEnterAnimation">@anim/top_in</item>
+        <item name="android:windowExitAnimation">@anim/top_out</item>
+    </style>
 </resources>

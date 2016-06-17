@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jayden.testandroid.customview.scroller.TestScrollerView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00ff00"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="向左滑动"
+        android:textSize="25sp"
+        android:textColor="@android:color/white"/>
+
+</com.jayden.testandroid.customview.scroller.TestScrollerView>
