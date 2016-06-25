@@ -19,4 +19,16 @@
     <declare-styleable name="CircleImageView">
         <attr name="name" format="string" />
     </declare-styleable>
+
+    <declare-styleable name="RadarView">
+        <attr name="image_width" format="dimension"/>
+        <attr name="circle_margin" format="dimension" />
+        <attr name="circle_width" format="dimension"/>
+        <attr name="circle_color0" format="color"/>
+        <attr name="circle_colorx" format="color"/>
+        <attr name="circle_colorxx" format="color"/>
+        <attr name="circle_colorxxx" format="color"/>
+        <attr name="saner_color" format="color"/>
+        <attr name="default_image" format="reference"/>
+    </declare-styleable>
 </resources>
