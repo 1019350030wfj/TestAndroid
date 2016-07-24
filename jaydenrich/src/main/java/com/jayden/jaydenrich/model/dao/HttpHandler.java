@@ -42,18 +42,18 @@ import okhttp3.Response;
  */
 public class HttpHandler {
 
-    private static final int READ_TIME_OUT = 30;
-    private static final int CONNECT_TIME_OUT = 30;
+    private static final int TIME_OUT = 60;
 
     private static final MyComparator mPairComparator = new MyComparator();
-    private static HttpHandler sInstance;
+    private static volatile HttpHandler sInstance;
     private OkHttpClient mOkHttpClient;
     private Handler mDelivery;
 
     private HttpHandler(Context context) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder()
-                .readTimeout(READ_TIME_OUT, TimeUnit.SECONDS)
-                .connectTimeout(CONNECT_TIME_OUT, TimeUnit.SECONDS)
+                .readTimeout(TIME_OUT, TimeUnit.SECONDS)
+                .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
+                .writeTimeout(TIME_OUT, TimeUnit.SECONDS)
                 .cookieJar(CookiesManager.getInstance(context));//支持cookie
         mOkHttpClient = builder.build();
 

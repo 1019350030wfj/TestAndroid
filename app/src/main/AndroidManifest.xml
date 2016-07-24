@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".customview.TestRadarActivity"
+            android:name=".lifecycle.AActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -24,6 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+        <activity android:name=".lifecycle.BActivity" />
         <activity android:name=".lollipop.animation.OtherActivity" />
 
         <service android:name=".customview.floatview.TopFloatService" />
@@ -59,6 +60,9 @@
                     android:scheme="jayden" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".question.edittext.EdittextFocus"
+            android:windowSoftInputMode="stateHidden"/>
     </application>
 
 </manifest>

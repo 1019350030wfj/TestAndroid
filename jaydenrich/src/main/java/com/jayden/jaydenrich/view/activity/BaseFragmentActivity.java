@@ -21,7 +21,7 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
     protected FragmentManager mFragmentManager;
     private HashMap<Integer, String> mCurrentFragments;
     private int mResId = -1;
-    private boolean isFirst = false;//避免每次进来都重新加载数据
+    private boolean isFirst = false;//onWindowFocus会调用多次，避免每次都重新加载数据
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,7 +40,8 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
             Log.d("jayden","onCreate = tag" + tag);
             changeFragment(resId, findFragmentByTag(resId, tag), tag);
         }
-        initCreate(savedInstanceState);
+        initViews();
+        initData(savedInstanceState);
     }
 
     @Override
@@ -50,11 +51,6 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
             isFirst = true;
         }
         super.onWindowFocusChanged(hasFocus);
-    }
-
-    protected void initCreate(Bundle savedInstanceState) {
-        initViews();
-        initData(savedInstanceState);
     }
 
     /**
