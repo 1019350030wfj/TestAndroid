@@ -1,13 +1,8 @@
 package com.jayden.testandroid.customview.floatview;
 
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.widget.Toast;
 
 import com.jayden.testandroid.R;
 
@@ -17,58 +12,36 @@ import com.jayden.testandroid.R;
  */
 public class TestFloatViewActivity extends AppCompatActivity {
 
-    private Intent service;
-    private TopFloatService bindService;
-
-    private ServiceConnection conn = new ServiceConnection() {
-
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-            Log.d("jayden", "onServiceDisconnected()");
-        }
-
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-            Log.d("jayden", "onServiceConnected()");
-            TopFloatService.MyBinder binder = (TopFloatService.MyBinder)service;
-            bindService = binder.getService();
-            bindService.show();
-        }
-    };
-
+    private FloatView floatView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_float_view);
-//        startService(service);
-        bind();
+        floatView = new FloatView(this,0,0,R.layout.floatview_layotu);
+        floatView.setFloatViewClickListener(new FloatView.IFloatViewClick() {
+            @Override
+            public void onFloatViewClick() {
+                Toast.makeText(TestFloatViewActivity.this,"floatview is clicked",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
-    private void bind() {
-        service = new Intent(this,TopFloatService.class);
-        bindService(service,conn, Context.BIND_AUTO_CREATE);
+
+    @Override
+    protected void onStart() {
+        floatView.addToWindow();
+        super.onStart();
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        if (bindService != null) {
-            bindService.show();
-        }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if (bindService != null) {
-            bindService.hide();
-        }
+    protected void onStop() {
+        floatView.removeFromWindow();
+        super.onStop();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        unbindService(conn);
     }
 }
