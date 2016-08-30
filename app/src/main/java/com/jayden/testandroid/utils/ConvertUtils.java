@@ -1,6 +1,7 @@
 package com.jayden.testandroid.utils;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.util.TypedValue;
 
 /**
@@ -8,6 +9,11 @@ import android.util.TypedValue;
  * Email : 1570713698@qq.com
  */
 public class ConvertUtils {
+
+    public static float sp2px(Resources resources, float sp){
+        final float scale = resources.getDisplayMetrics().scaledDensity;
+        return sp * scale;
+    }
 
     /**
      * dip转px

@@ -7,7 +7,7 @@
     <color name="bg_focus">#DDDDDD</color>
     <color name="red_500">#ef4836</color>
     <color name="red">#be002f</color>
-
+    <color name="float_transparent">#00000000</color>
     <color name="half_color">#30000000</color>
     <color name="white">#FFFFFF</color>
     <color name="gray">#ACACAC</color>
