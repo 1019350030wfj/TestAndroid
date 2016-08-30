@@ -79,4 +79,9 @@
     <string name="title_section3">Section 3</string>
 
     <string name="action_example">Example action</string>
+    <string name="animation_2_text_1">Example animation_2_text_1</string>
+    <string name="animation_2_text_2">Example animation_2_text_2</string>
+    <string name="animation_2_text_3">Example animation_2_text_3</string>
+    <string name="animation_2_text_4">Example animation_2_text_4</string>
+    <string name="animation_2_instructions">animation_2_instructions</string>
 </resources>

@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".lifecycle.AActivity"
+            android:name=".api.xmlparser.DataPullPraserDemo"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -24,7 +24,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+        <activity android:name=".api.xmlparser.ParserResultActivity"/>
         <activity android:name=".lifecycle.BActivity" />
+        <activity android:name=".customview.circlemenu.CCBActivity" />
+        <activity android:name=".customview.circlemenu.CircleActivity" />
         <activity android:name=".lollipop.animation.OtherActivity" />
 
         <service android:name=".customview.floatview.TopFloatService" />

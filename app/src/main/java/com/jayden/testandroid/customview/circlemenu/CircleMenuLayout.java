@@ -32,19 +32,19 @@ public class CircleMenuLayout extends ViewGroup {
         maxChildHeight = 0;
 
         int childWidthMeasureSpec = MeasureSpec.makeMeasureSpec(
-                MeasureSpec.getSize(widthMeasureSpec),MeasureSpec.AT_MOST);
+                MeasureSpec.getSize(widthMeasureSpec), MeasureSpec.AT_MOST);
         int childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(
-                MeasureSpec.getSize(heightMeasureSpec),MeasureSpec.AT_MOST);
+                MeasureSpec.getSize(heightMeasureSpec), MeasureSpec.AT_MOST);
         final int childCount = getChildCount();
-        for (int i=0; i<childCount;i++) {
+        for (int i = 0; i < childCount; i++) {
             View child = getChildAt(i);
             if (child.getVisibility() == GONE) {
                 continue;
             }
-            child.measure(childWidthMeasureSpec,childHeightMeasureSpec);
+            child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
 
-            maxChildHeight = Math.max(maxChildHeight,child.getMeasuredHeight());
-            maxChildWidth = Math.max(maxChildWidth,child.getMeasuredWidth());
+            maxChildHeight = Math.max(maxChildHeight, child.getMeasuredHeight());
+            maxChildWidth = Math.max(maxChildWidth, child.getMeasuredWidth());
         }
 
         //measure self
@@ -62,7 +62,7 @@ public class CircleMenuLayout extends ViewGroup {
                 break;
             }
             case MeasureSpec.AT_MOST: {
-                hopeWidthSize = Math.min(widthSize,heightSize);
+                hopeWidthSize = Math.min(widthSize, heightSize);
                 break;
             }
             case MeasureSpec.UNSPECIFIED: {
@@ -77,7 +77,7 @@ public class CircleMenuLayout extends ViewGroup {
                 break;
             }
             case MeasureSpec.AT_MOST: {
-                hopeHeightSize = Math.min(widthSize,heightSize);
+                hopeHeightSize = Math.min(widthSize, heightSize);
                 break;
             }
             case MeasureSpec.UNSPECIFIED: {
@@ -87,13 +87,14 @@ public class CircleMenuLayout extends ViewGroup {
         }
 
         //decide to what want
-        setMeasuredDimension(resolveSize(hopeWidthSize,widthMeasureSpec),
-                resolveSize(hopeHeightSize,heightMeasureSpec));
+        setMeasuredDimension(resolveSize(hopeWidthSize, widthMeasureSpec),
+                resolveSize(hopeHeightSize, heightMeasureSpec));
     }
 
     // Sizes of the ViewGroup
     private int circleWidth, circleHeight;
     private float radius = 0;
+
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         int layoutWidth = r - l;
@@ -108,6 +109,7 @@ public class CircleMenuLayout extends ViewGroup {
     }
 
     private float angle = 90;
+
     private void setChildAngles() {
         int left, top, childWidth, childHeight, childCount = getChildCount();
         float angleDelay = 360.0f / childCount;
@@ -115,7 +117,7 @@ public class CircleMenuLayout extends ViewGroup {
         float localAngle = angle;
 
         //遍历所有孩子
-        for (int i=0;i<childCount; i++) {
+        for (int i = 0; i < childCount; i++) {
             View child = getChildAt(i);
             if (child.getVisibility() == GONE) {
                 continue;
@@ -130,7 +132,7 @@ public class CircleMenuLayout extends ViewGroup {
             childWidth = child.getMeasuredWidth();
             childHeight = child.getMeasuredHeight();
             left = Math.round((float) (((circleWidth / 2.0) - childWidth / 2.0) + radius
-                            * Math.cos(Math.toRadians(localAngle))));
+                    * Math.cos(Math.toRadians(localAngle))));
             top = Math
                     .round((float) (((circleHeight / 2.0) - childHeight / 2.0) + radius
                             * Math.sin(Math.toRadians(localAngle))));

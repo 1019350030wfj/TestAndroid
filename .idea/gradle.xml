@@ -3,8 +3,9 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="D:\Program Files\Java\as2.1.2\android-studio\gradle\gradle-2.10" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -17,18 +18,7 @@
             <option value="$PROJECT_DIR$/pulltorefresh" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/HostA" />
-            <option value="$PROJECT_DIR$/MPChartLib" />
-            <option value="$PROJECT_DIR$/PluginA" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/jaydenrich" />
-            <option value="$PROJECT_DIR$/jaydenrichdemo" />
-            <option value="$PROJECT_DIR$/pulltorefresh" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
