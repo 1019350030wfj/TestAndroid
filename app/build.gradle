@@ -20,9 +20,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+//    repositories {
+//        flatDir {
+//            dirs 'libs' //this way we can find the .aar file in libs folder
+//        }
+//    }
 }
 
 dependencies {
+//    compile(name:'test', ext:'aar')
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.android.support:design:23.2.0'
