@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <declare-styleable name="TextShowOneByOneView">
+        <attr name="textContent" format="string"></attr>
+        <attr name="textSize" format="dimension"></attr>
+        <attr name="textColor" format="color"></attr>
+        <attr name="textSpacingMult" format="float"></attr>
+        <attr name="textSpacingAdd" format="float"></attr>
+        <attr name="textXAlignment" format="string"></attr>
+    </declare-styleable>
     <declare-styleable name="CircleProgress">
         <attr name="circle_progress" format="integer"/>
         <attr name="circle_max" format="integer"/>
