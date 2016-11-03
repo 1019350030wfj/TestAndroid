@@ -25,4 +25,5 @@
 
     <color name="cardFront">#434850</color>
     <color name="cardBack">#bc4c4a</color>
+    <color name="blue">#0000ff</color>
 </resources>

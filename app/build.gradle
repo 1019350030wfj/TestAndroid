@@ -31,16 +31,16 @@ android {
 dependencies {
 //    compile(name:'test', ext:'aar')
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:23.2.0'
-    compile 'com.android.support:design:23.2.0'
-    compile 'com.android.support:cardview-v7:23.+'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support:cardview-v7:23.4.0'
 
     compile 'com.squareup.picasso:picasso:2.5.2'
 
     compile ('com.jcodecraeer:xrecyclerview:1.2.6') {
         exclude module:'recyclerview-v7',group:'com.android.support'
     }
-    compile 'com.android.support:percent:23.2.0'
+    compile 'com.android.support:percent:23.4.0'
 
     // retrofit2 + okhttp3
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
@@ -65,6 +65,8 @@ dependencies {
 
     compile project(':pulltorefresh')
     compile project(':MPChartLib')
+
+    compile 'com.github.rey5137:material:1.2.4'
 
     //video play lib
     compile 'com.github.danylovolokh:video-player-manager:0.2.0'
