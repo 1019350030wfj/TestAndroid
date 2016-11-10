@@ -97,4 +97,7 @@
         <item>Uranus</item>
         <item>Neptune</item>
     </string-array>
+
+    <string name="str_start_page1">RAM\tTEST\t:END\nRAM\tTEST\t:END\t[60W3C]\nDRAM\tID\t:0004002C\nSRAM\tID\t:FF030000\nFROM\tID\t:FFE30000\n***\tMESSAGE\t\t***\n\n\n\n\n\nLOADING\tCNC\tDAIA-1\t\t\t100000/000000\nEND</string>
+
 </resources>

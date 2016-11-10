@@ -4,5 +4,5 @@
     <item name="id_circle_menu_item_image" type="id"/>
     <item name="id_circle_menu_item_text" type="id"/>
     <item name="id_circle_menu_item_center" type="id"/>
-
+    <item type="id" name="item_touch_helper_previous_elevation"/>
 </resources>
