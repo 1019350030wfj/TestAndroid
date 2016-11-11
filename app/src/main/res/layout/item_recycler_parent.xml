@@ -3,7 +3,7 @@
 	android:id="@+id/container"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:background="#ffcecece" >
+	android:background="#ffffff" >
 
 	<ImageView
 		android:id="@+id/expand"
@@ -15,7 +15,7 @@
 		android:layout_marginLeft="5dp"
 		android:layout_marginStart="5dp"
 		android:contentDescription="@null"
-		android:src="@drawable/expand" />
+		android:src="@drawable/icon_menss_triangle_nor" />
 
 	<ImageView
 		android:id="@+id/image"

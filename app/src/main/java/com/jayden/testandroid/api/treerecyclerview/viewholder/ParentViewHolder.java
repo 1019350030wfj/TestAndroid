@@ -52,7 +52,7 @@ public class ParentViewHolder extends BaseViewHolder {
 		expand.setLayoutParams(params);
 		text.setText(itemData.getText());
 		if (itemData.isExpand()) {
-			expand.setRotation(45);
+			expand.setRotation(90);
 			List<ItemData> children = itemData.getChildren();
 			if (children != null) {
 				count.setText(String.format("(%s)", itemData.getChildren()
