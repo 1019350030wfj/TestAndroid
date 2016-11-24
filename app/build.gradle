@@ -16,6 +16,9 @@ android {
 
         ndk{
             moduleName "hello"
+            abiFilters "armeabi armeabi-v7a"
+            stl "gnustl_shared"
+            cFlags "-IF://adt//adt//sdk//ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include"
         }
     }
     buildTypes {
@@ -26,7 +29,8 @@ android {
 
         sourceSets {
             main {
-                jni.srcDirs = []
+                jniLibs.srcDirs = ['src/main/libs']
+                jni.srcDirs = [] //disable automatic ndk-build
             }
         }
     }
