@@ -1,0 +1,15 @@
+Executable : I:\adt\sdk\ndk-bundle\ndk-build.cmd
+arguments : 
+NDK_PROJECT_PATH=null
+APP_BUILD_SCRIPT=G:\All_Data\Myself\android_project\TestAndroid\app\src\main\jni\Android.mk
+APP_ABI=armeabi
+NDK_ALL_ABIS=armeabi
+NDEBUG=0
+APP_PLATFORM=android-17
+NDK_OUT=G:/All_Data/Myself/android_project/TestAndroid/app/build/intermediates/ndkBuild/sourceSets/obj
+NDK_LIBS_OUT=G:\All_Data\Myself\android_project\TestAndroid\app\build\intermediates\ndkBuild\sourceSets\lib
+APP_SHORT_COMMANDS=false
+LOCAL_SHORT_COMMANDS=false
+-n
+jvmArgs : 
+

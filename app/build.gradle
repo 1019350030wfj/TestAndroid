@@ -16,7 +16,7 @@ android {
 
         ndk{
             moduleName "hello"
-            abiFilters "armeabi armeabi-v7a"
+//            abiFilters "armeabi armeabi-v7a"
             stl "gnustl_shared"
             cFlags "-IF://adt//adt//sdk//ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include"
         }
@@ -40,6 +40,11 @@ android {
 //            dirs 'libs' //this way we can find the .aar file in libs folder
 //        }
 //    }
+    externalNativeBuild {
+        ndkBuild {
+            path 'src/main/jni/Android.mk'
+        }
+    }
 }
 
 dependencies {

@@ -1,0 +1,32 @@
+{
+  "buildFiles": [
+    "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\jni\\Android.mk"
+  ],
+  "cleanCommands": [
+    "I:\\adt\\sdk\\ndk-bundle\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dG:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\jni\\Android.mk APP_ABI\u003dmips NDK_ALL_ABIS\u003dmips NDEBUG\u003d1 APP_PLATFORM\u003dandroid-17 NDK_OUT\u003dG:/All_Data/Myself/android_project/TestAndroid/app/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dG:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\ndkBuild\\debug\\lib clean"
+  ],
+  "libraries": {
+    "hello-debug-mips": {
+      "buildCommand": "I:\\adt\\sdk\\ndk-bundle\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dG:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\jni\\Android.mk APP_ABI\u003dmips NDK_ALL_ABIS\u003dmips NDEBUG\u003d1 APP_PLATFORM\u003dandroid-17 NDK_OUT\u003dG:/All_Data/Myself/android_project/TestAndroid/app/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dG:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\ndkBuild\\debug\\lib G:/All_Data/Myself/android_project/TestAndroid/app/build/intermediates/ndkBuild/debug/obj/local/mips/libhello.so",
+      "toolchain": "toolchain-mips",
+      "abi": "mips",
+      "artifactName": "hello",
+      "files": [
+        {
+          "src": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\jni\\com_jayden_testandroid_ndk_HelloNDKActivity.cpp",
+          "flags": "\"-gcc-toolchain\" \"I:/adt/sdk/ndk-bundle/build//../toolchains/mipsel-linux-android-4.9/prebuilt/windows-x86_64\" \"-target\" \"mipsel-none-linux-android\" \"-fpic\" \"-ffunction-sections\" \"-funwind-tables\" \"-fstack-protector-strong\" \"-fmessage-length\u003d0\" \"-Wno-invalid-command-line-argument\" \"-Wno-unused-command-line-argument\" \"-no-canonical-prefixes\" \"-g\" \"-mips32\" \"-fno-exceptions\" \"-fno-rtti\" \"-O2\" \"-DNDEBUG\" \"-II:/adt/sdk/ndk-bundle/build//../sources/cxx-stl/system/include\" \"-IG:/All_Data/Myself/android_project/TestAndroid/app/src/main/jni\" \"-DANDROID\" \"-Wa,--noexecstack\" \"-Wformat\" \"-Werror\u003dformat-security\" \"-isystem\" \"I:/adt/sdk/ndk-bundle/build//../platforms/android-17/arch-mips/usr/include\""
+        }
+      ],
+      "output": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\ndkBuild\\debug\\obj\\local\\mips\\libhello.so"
+    }
+  },
+  "toolchains": {
+    "toolchain-mips": {
+      "cppCompilerExecutable": "I:\\adt\\sdk\\ndk-bundle\\build\\..\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
