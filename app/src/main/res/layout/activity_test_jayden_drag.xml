@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.jayden.testandroid.customview.dragviewhelper.JaydenDragLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<com.jayden.testandroid.customview.dragviewhelper.JaydenDragLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/drawerlayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/ll_group"
@@ -18,8 +19,19 @@
             android:layout_height="match_parent"/>
     </LinearLayout>
 
+    <!--android:layout_width="200dp"-->
+    <!--android:layout_height="560dp"-->
+    <!--android:background="@drawable/wanyongbiao"/>-->
+    <!--<LinearLayout-->
     <LinearLayout
-        android:layout_width="200dp"
-        android:layout_height="560dp"
-        android:background="@drawable/wanyongbiao"/>
+        android:layout_width="500dp"
+        android:layout_height="560dp">
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:text="time"
+            android:textSize="16sp"
+        android:textColor="#ff0000"/>
+    </LinearLayout>
 </com.jayden.testandroid.customview.dragviewhelper.JaydenDragLayout>

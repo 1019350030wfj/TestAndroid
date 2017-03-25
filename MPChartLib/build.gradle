@@ -1,13 +1,16 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
 
+def configInfo = rootProject.ext.android
+def librarys = rootProject.ext.dependencies
+
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.1"
-    // resourcePrefix 'mpcht'
+    compileSdkVersion configInfo.compileSdkVersion
+    buildToolsVersion configInfo.buildToolsVersion
+
     defaultConfig {
-        minSdkVersion 8
-        targetSdkVersion 23
+        minSdkVersion configInfo.minSdkVersion
+        targetSdkVersion configInfo.targetSdkVersion
         versionCode 1
         versionName '1.0'
 
@@ -38,9 +41,7 @@ repositories {
 }
 
 dependencies {
-    //compile fileTree(dir: 'libs', include: ['*.jar'])
-    //compile 'com.android.support:support-v4:19.+'
-    provided 'io.realm:realm-android:0.87.5' // "optional" dependency to realm-database API
+    provided librarys.realm
 }
 
 android.libraryVariants.all { variant ->

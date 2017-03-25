@@ -13,6 +13,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebStorage;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
 
 import com.jayden.testandroid.R;
 import com.jayden.testandroid.customview.MyWebView;
@@ -24,6 +25,17 @@ import com.jayden.testandroid.customview.MyWebView;
 public class TestJaydenDragActivity extends AppCompatActivity {
 
     private JaydenDragLayout mDragLayout;
+
+    private TextView mTextView;
+    private int time = 0;
+
+    private Runnable mRunnable = new Runnable() {
+        @Override
+        public void run() {
+            mTextView.setText((time++) + "S");
+            mTextView.postDelayed(this, 1000);
+        }
+    };
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,8 +51,11 @@ public class TestJaydenDragActivity extends AppCompatActivity {
             }
         });
 
+        mTextView = (TextView) findViewById(R.id.time);
+        mRunnable.run();
 //        LinearLayout ll = (LinearLayout) findViewById(R.id.ll_group);
 //        ll.addView(webView);
+
     }
 
     //webView的初始化设置

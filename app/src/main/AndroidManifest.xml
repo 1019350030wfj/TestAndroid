@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jayden.testandroid">
+          package="com.jayden.testandroid">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
     <application
         android:allowBackup="true"
@@ -14,58 +18,60 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ndk.HelloNDKActivity"
+            android:name="com.jayden.testandroid.thirdlib.retrofit.TestRetrofit"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".animation.transition.SceneChangeBoundsActivity"/>
+        <activity android:name=".animation.transition.BeginDelayedActivity"/>
+        <activity android:name=".MainActivity"/>
         <activity android:name=".api.xmlparser.ParserResultActivity"/>
-        <activity android:name=".lifecycle.BActivity" />
-        <activity android:name=".customview.circlemenu.CCBActivity" />
-        <activity android:name=".customview.circlemenu.CircleActivity" />
-        <activity android:name=".lollipop.animation.OtherActivity" />
+        <activity android:name=".lifecycle.BActivity"/>
+        <activity android:name=".customview.circlemenu.CCBActivity"/>
+        <activity android:name=".customview.circlemenu.CircleActivity"/>
+        <activity android:name=".lollipop.animation.OtherActivity"/>
 
-        <service android:name=".customview.floatview.TopFloatService" />
+        <service android:name=".customview.floatview.TopFloatService"/>
 
-        <activity android:name=".lollipop.animation.ShareElementActivity" />
+        <activity android:name=".lollipop.animation.ShareElementActivity"/>
 
         <!-- 以下两个是测试从web启动app， 下面的mainActivity要作为应用的路口Activity -->
         <activity
             android:name=".weblauncher.WebIntentActivity"
             android:theme="@style/Theme.Transparent">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.VIEW"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
 
-                <data android:mimeType="text/plain" />
+                <data android:mimeType="text/plain"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".video.MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+        <!--<activity-->
+        <!--android:name=".video.MainActivity"-->
+        <!--android:label="@string/app_name"-->
+        <!--android:theme="@style/AppTheme.NoActionBar">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.VIEW" />-->
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
+        <!--<category android:name="android.intent.category.DEFAULT" />-->
+        <!--<category android:name="android.intent.category.BROWSABLE" />-->
 
-                <data
-                    android:host="testandroid.app"
-                    android:pathPrefix="/openwith"
-                    android:scheme="jayden" />
-            </intent-filter>
-        </activity>
+        <!--<data-->
+        <!--android:host="testandroid.app"-->
+        <!--android:pathPrefix="/openwith"-->
+        <!--android:scheme="jayden" />-->
+        <!--</intent-filter>-->
+        <!--</activity>-->
 
         <activity android:name=".question.edittext.EdittextFocus"
-            android:windowSoftInputMode="stateHidden"/>
+                  android:windowSoftInputMode="stateHidden"/>
     </application>
 
 </manifest>

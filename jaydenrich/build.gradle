@@ -1,12 +1,15 @@
 apply plugin: 'com.android.library'
 
+def configInfo = rootProject.ext.android
+def librarys = rootProject.ext.dependencies
+
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    compileSdkVersion configInfo.compileSdkVersion
+    buildToolsVersion configInfo.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 23
+        minSdkVersion configInfo.minSdkVersion
+        targetSdkVersion configInfo.targetSdkVersion
         versionCode 1
         versionName "1.0"
     }
@@ -19,19 +22,15 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile 'com.android.support:design:24.2.0'
-
-    compile 'com.squareup.okhttp3:okhttp:3.2.0'
-    compile 'com.squareup.picasso:picasso:2.5.2'
-
-    compile 'com.google.code.gson:gson:2.6.2'
-
-    compile ('com.jcodecraeer:xrecyclerview:1.2.7') {
-        exclude module:'recyclerview-v7',group:'com.android.support'
+    compile librarys.design
+    compile librarys.okhttp
+    compile librarys.picasso
+    compile librarys.gson
+    compile (librarys.xrecyclerview) {
+        exclude module: 'recyclerview-v7', group: 'com.android.support'
     }
-    compile project(':pulltorefresh')
+    compile librarys.butterknife
 
-    compile 'com.jakewharton:butterknife:7.0.1'
+    compile project(':pulltorefresh')
 }

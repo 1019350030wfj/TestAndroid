@@ -1,28 +1,28 @@
 {
   "buildFiles": [
-    "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\jni\\Android.mk"
+    "E:\\ago\\project\\TestAndroid\\app\\src\\main\\jni\\Android.mk"
   ],
   "cleanCommands": [
-    "I:\\adt\\sdk\\ndk-bundle\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dG:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\jni\\Android.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDEBUG\u003d1 APP_PLATFORM\u003dandroid-21 NDK_OUT\u003dG:/All_Data/Myself/android_project/TestAndroid/app/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dG:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\ndkBuild\\debug\\lib clean"
+    "F:\\adt\\adt\\sdk\\ndk-bundle\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dE:\\ago\\project\\TestAndroid\\app\\src\\main\\jni\\Android.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-21 NDK_OUT\u003dE:/ago/project/TestAndroid/app/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dE:\\ago\\project\\TestAndroid\\app\\build\\intermediates\\ndkBuild\\debug\\lib clean"
   ],
   "libraries": {
     "hello-debug-arm64-v8a": {
-      "buildCommand": "I:\\adt\\sdk\\ndk-bundle\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dG:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\jni\\Android.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDEBUG\u003d1 APP_PLATFORM\u003dandroid-21 NDK_OUT\u003dG:/All_Data/Myself/android_project/TestAndroid/app/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dG:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\ndkBuild\\debug\\lib G:/All_Data/Myself/android_project/TestAndroid/app/build/intermediates/ndkBuild/debug/obj/local/arm64-v8a/libhello.so",
+      "buildCommand": "F:\\adt\\adt\\sdk\\ndk-bundle\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dE:\\ago\\project\\TestAndroid\\app\\src\\main\\jni\\Android.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-21 NDK_OUT\u003dE:/ago/project/TestAndroid/app/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dE:\\ago\\project\\TestAndroid\\app\\build\\intermediates\\ndkBuild\\debug\\lib E:/ago/project/TestAndroid/app/build/intermediates/ndkBuild/debug/obj/local/arm64-v8a/libhello.so",
       "toolchain": "toolchain-arm64-v8a",
       "abi": "arm64-v8a",
       "artifactName": "hello",
       "files": [
         {
-          "src": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\jni\\com_jayden_testandroid_ndk_HelloNDKActivity.cpp",
-          "flags": "\"-gcc-toolchain\" \"I:/adt/sdk/ndk-bundle/build//../toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64\" \"-target\" \"aarch64-none-linux-android\" \"-ffunction-sections\" \"-funwind-tables\" \"-fstack-protector-strong\" \"-fpic\" \"-Wno-invalid-command-line-argument\" \"-Wno-unused-command-line-argument\" \"-no-canonical-prefixes\" \"-g\" \"-fno-exceptions\" \"-fno-rtti\" \"-O2\" \"-DNDEBUG\" \"-II:/adt/sdk/ndk-bundle/build//../sources/cxx-stl/system/include\" \"-IG:/All_Data/Myself/android_project/TestAndroid/app/src/main/jni\" \"-DANDROID\" \"-Wa,--noexecstack\" \"-Wformat\" \"-Werror\u003dformat-security\" \"-isystem\" \"I:/adt/sdk/ndk-bundle/build//../platforms/android-21/arch-arm64/usr/include\""
+          "src": "E:\\ago\\project\\TestAndroid\\app\\src\\main\\jni\\com_jayden_testandroid_ndk_HelloNDKActivity.cpp",
+          "flags": "\"-gcc-toolchain\" \"F:/adt/adt/sdk/ndk-bundle/build//../toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64\" \"-target\" \"aarch64-none-linux-android\" \"-ffunction-sections\" \"-funwind-tables\" \"-fstack-protector-strong\" \"-fpic\" \"-Wno-invalid-command-line-argument\" \"-Wno-unused-command-line-argument\" \"-no-canonical-prefixes\" \"-g\" \"-fno-exceptions\" \"-fno-rtti\" \"-O0\" \"-UNDEBUG\" \"-fno-limit-debug-info\" \"-IF:/adt/adt/sdk/ndk-bundle/build//../sources/cxx-stl/system/include\" \"-IE:/ago/project/TestAndroid/app/src/main/jni\" \"-DANDROID\" \"-Wa,--noexecstack\" \"-Wformat\" \"-Werror\u003dformat-security\" \"-isystem\" \"F:/adt/adt/sdk/ndk-bundle/build//../platforms/android-21/arch-arm64/usr/include\""
         }
       ],
-      "output": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\ndkBuild\\debug\\obj\\local\\arm64-v8a\\libhello.so"
+      "output": "E:\\ago\\project\\TestAndroid\\app\\build\\intermediates\\ndkBuild\\debug\\obj\\local\\arm64-v8a\\libhello.so"
     }
   },
   "toolchains": {
     "toolchain-arm64-v8a": {
-      "cppCompilerExecutable": "I:\\adt\\sdk\\ndk-bundle\\build\\..\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+      "cppCompilerExecutable": "F:\\adt\\adt\\sdk\\ndk-bundle\\build\\..\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
     }
   },
   "cFileExtensions": [],
