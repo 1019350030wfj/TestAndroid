@@ -14,7 +14,7 @@ import com.jayden.testandroid.R;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -26,13 +26,13 @@ public class DetailFragment extends Fragment {
     private static final String ARG_NUMBER = "arg_number";
     private ArrayList<DetailData> mDetailDatas;
 
-    @Bind(R.id.detail_image)
+    @BindView(R.id.detail_image)
     ImageView mImage;
 
-    @Bind(R.id.detail_head)
+    @BindView(R.id.detail_head)
     TextView mHead;
 
-    @Bind(R.id.detail_body)
+    @BindView(R.id.detail_body)
     TextView mBody;
 
     public static DetailFragment newInstance(@IntRange(from = 0,to = 5) int number) {
@@ -78,12 +78,6 @@ public class DetailFragment extends Fragment {
         mDetailDatas.add(new DetailData(R.drawable.tiffany, R.string.tiffany, R.string.tiffany_detail));
         mDetailDatas.add(new DetailData(R.drawable.yuri, R.string.yuri, R.string.yuri_detail));
         mDetailDatas.add(new DetailData(R.drawable.yoona, R.string.yoona, R.string.yoona_detail));
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     // 定义类

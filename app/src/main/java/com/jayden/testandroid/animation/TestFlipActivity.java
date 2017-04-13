@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 
 import com.jayden.testandroid.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -21,11 +21,11 @@ import butterknife.ButterKnife;
  */
 public class TestFlipActivity extends AppCompatActivity{
 
-    @Bind(R.id.main_fl_container)
+    @BindView(R.id.main_fl_container)
     FrameLayout mFlContainer;
-    @Bind(R.id.main_fl_card_back)
+    @BindView(R.id.main_fl_card_back)
     FrameLayout mFlCardBack;
-    @Bind(R.id.main_fl_card_front)
+    @BindView(R.id.main_fl_card_front)
     FrameLayout mFlCardFront;
 
     private boolean mIsShowBack;//标记是否显示反面
@@ -83,11 +83,5 @@ public class TestFlipActivity extends AppCompatActivity{
             mLeftInSet.start();
             mIsShowBack = false;
         }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        ButterKnife.unbind(this);
     }
 }

@@ -96,11 +96,20 @@ public class TextShowOneByOneView extends View {
         textPaint.setTextSize(textSize);
     }
 
+    private long mSpendTime;
+//
+//    @Override
+//    public boolean hasOverlappingRendering() {
+//        return false;
+//    }
+
     @Override
     protected void onDraw(Canvas canvas) {
+        mSpendTime = System.currentTimeMillis();
         super.onDraw(canvas);
 
         drawText(canvas);
+        Log.e("jayden","onDraw time = " + (System.currentTimeMillis() - mSpendTime));
     }
 
     private int cnt = 0;
@@ -113,13 +122,13 @@ public class TextShowOneByOneView extends View {
         if (contents == null || cnt >= contents.size()) {
             return;
         }
-        if ("100000".equals(contents.get(cnt)) && index10000<=5){
+        if ("100000".equals(contents.get(cnt)) && index10000 <= 5) {
             if (index10000 == 0) {//第一次才赋值给
                 totalText10000 = totalText;
             }
             index10000++;
-            totalText =totalText10000+ (index10000*100000)+"/000000";
-            if(index10000 == 6){
+            totalText = totalText10000 + (index10000 * 100000) + "/000000";
+            if (index10000 == 6) {
                 cnt += 3;
             }
         } else {
@@ -127,8 +136,8 @@ public class TextShowOneByOneView extends View {
             cnt++;
         }
 
-        Log.e("jayden","cnt = " + cnt);
-        Log.e("jayden","totalText = " + totalText);
+        Log.e("jayden", "cnt = " + cnt);
+        Log.e("jayden", "totalText = " + totalText);
         StaticLayout layout = null;
         if (textAlignment.equals("normal")) {
             //textPaint(TextPaint 类型)设置了字符串格式及属性的画笔,240为设置画多宽后换行，后面的参数是对齐方式及行间距

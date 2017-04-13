@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 import com.jayden.testandroid.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -29,13 +29,13 @@ import butterknife.ButterKnife;
  */
 public class OtherActivity extends AppCompatActivity {
 
-    @Bind(R.id.other_fab_circle)
+    @BindView(R.id.other_fab_circle)
     FloatingActionButton mFabCircle;
-    @Bind(R.id.other_tv_container)
+    @BindView(R.id.other_tv_container)
     TextView mTVContainer;
-    @Bind(R.id.other_iv_close)
+    @BindView(R.id.other_iv_close)
     ImageView mIvClose;
-    @Bind(R.id.other_rl_container)
+    @BindView(R.id.other_rl_container)
     RelativeLayout mRlContainer;
 
     @Override

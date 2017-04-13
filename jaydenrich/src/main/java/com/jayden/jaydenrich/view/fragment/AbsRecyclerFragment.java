@@ -61,7 +61,7 @@ public abstract class AbsRecyclerFragment<D> extends Fragment implements IRecycl
     }
 
     public void setLoadMoreProgressStyle(int mLoadMoreProgressStyle) {
-        rvTest.setLoadingMoreProgressStyle(mLoadMoreProgressStyle == 0 ? ProgressStyle.BallScaleMultiple : mLoadMoreProgressStyle);
+        rvTest.setLaodingMoreProgressStyle(mLoadMoreProgressStyle == 0 ? ProgressStyle.BallScaleMultiple : mLoadMoreProgressStyle);
     }
 
     public void setRefreshProgressStyle(int mRefreshProgressStyle) {

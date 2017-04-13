@@ -8,7 +8,7 @@ import android.widget.EditText;
 
 import com.jayden.testandroid.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -18,8 +18,8 @@ import butterknife.ButterKnife;
  */
 public class WebIntentActivity extends Activity {
 
-    @Bind(R.id.web_intent_et_title) EditText mEtTitle;
-    @Bind(R.id.web_intent_et_link) EditText mEtLink;
+    @BindView(R.id.web_intent_et_title) EditText mEtTitle;
+    @BindView(R.id.web_intent_et_link) EditText mEtLink;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
