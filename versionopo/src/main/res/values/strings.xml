@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">versionopo</string>
+    <string name="label_data">Data:</string>
+    <string name="label_device_address">Device address:</string>
+    <string name="label_state">State:</string>
+    <string name="no_data">No data</string>
+    <string name="connected">Connected</string>
+    <string name="unknown_device">Unknown device</string>
+    <string name="unknown_characteristic">Unknown characteristic</string>
+    <string name="unknown_service">Unknown service</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="open_bt">打开蓝牙</string>
+    <string name="search">搜索设备</string>
+    <string name="send_msg">发送消息</string>
+    <string name="connect_error">连接失败</string>
+    <string name="connect_success">连接成功</string>
+    <string name="connecting">连接中</string>
+    <string name="connect_state">连接状态</string>
+    <string name="send_msgs">发送数据：</string>
+    <string name="send_msg_error">发送数据失败：</string>
+    <string name="get_msg">获取到数据：</string>
+</resources>

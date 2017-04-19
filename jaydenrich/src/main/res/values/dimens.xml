@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="fine_line_height">0.5dp</dimen>
-    <dimen name="default_elevation">8dp</dimen>
-    <dimen name="s5">18dp</dimen>
-    <dimen name="toolbar_height">56dp</dimen>
-    <dimen name="size_title_fragment">18sp</dimen>
-    <dimen name="height_title_fragment">53dp</dimen>
-</resources>
