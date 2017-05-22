@@ -2,17 +2,27 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.jayden.versionopo">
 
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <uses-feature android:name="android.hardware.bluetooth_le"
-                  android:required="true" />
+                  android:required="true"/>
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
-    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-feature android:name="android.hardware.location.gps"/>
+
+    <!--  GPS 定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <!-- 相机 壁纸 -->
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <!-- 相机 壁纸 -->
 
     <application
         android:allowBackup="true"
@@ -22,8 +32,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:theme="@style/AppTheme.NoActionBar"
-            android:name=".api.bluetooth.sec.ClientActivity">
+            android:name=".api.wallpaper.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -32,6 +41,20 @@
         </activity>
         <activity android:name=".api.bluetooth.ble.DeviceControlActivity"/>
         <service android:name=".api.bluetooth.ble.BluetoothLeService" android:enabled="true"/>
+
+        <service
+            android:name="com.jayden.versionopo.api.wallpaper.CameraWallpaperService"
+            android:label="app"
+            android:permission="android.permission.BIND_WALLPAPER">
+
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/livewallpaper"/>
+        </service>
     </application>
 
 </manifest>

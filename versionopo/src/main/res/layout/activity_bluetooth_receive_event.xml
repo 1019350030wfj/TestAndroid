@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jayden.versionopo.api.bluetooth.receiveevent.JaydenDragLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/draglayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.jayden.versionopo.api.bluetooth.receiveevent.JaydenFrameLayout
+        android:id="@+id/drag_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="搜索蓝牙设备"/>
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <com.jayden.versionopo.api.bluetooth.receiveevent.JaydenWebview
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="700dp"/>
+
+        <LinearLayout
+            android:id="@+id/right_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="invisible"
+        >
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/onesoft_model_loading_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible">
+
+            <SurfaceView
+                android:layout_width="0dp"
+                android:layout_height="0dp"/>
+
+        </FrameLayout>
+
+    </com.jayden.versionopo.api.bluetooth.receiveevent.JaydenFrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/ll_container_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"/>
+</com.jayden.versionopo.api.bluetooth.receiveevent.JaydenDragLayout>
+

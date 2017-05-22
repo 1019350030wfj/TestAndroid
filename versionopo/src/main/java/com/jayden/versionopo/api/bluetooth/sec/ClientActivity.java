@@ -8,6 +8,7 @@ import android.bluetooth.BluetoothSocket;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -102,17 +103,17 @@ public class ClientActivity extends Activity {
             for (BluetoothDevice device : pairedDevices) {
                 // Add the name and address to an array adapter to show in a ListView
                 mArrayAdapter.add(device.getName() + ":" + device.getAddress());
-                Log.e("jayden","type = " +device.getType() );
+                Log.e("jayden", "type = " + device.getType());
             }
         }
 
         //三、发现设备
         // 因为蓝牙搜索到设备和完成搜索都是通过广播来告诉其他应用的
         // 这里注册找到设备和完成搜索广播
-//        IntentFilter filter = new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);
-//        registerReceiver(mReceiver, filter);
-//        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-//        registerReceiver(mReceiver, filter);
+        IntentFilter filter = new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);
+        registerReceiver(mReceiver, filter);
+        filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+        registerReceiver(mReceiver, filter);
     }
 
     // Create a BroadcastReceiver for ACTION_FOUND
@@ -132,10 +133,19 @@ public class ClientActivity extends Activity {
                     mArrayAdapter.notifyDataSetChanged();
                 }
             } else if (action.equals(BluetoothAdapter.ACTION_DISCOVERY_FINISHED)) {
-                Toast.makeText(ClientActivity.this, "搜索完成", Toast.LENGTH_LONG).show();
+                Log.e("jayden", "搜索完成");
             }
         }
     };
+
+    public void onClick_Search(View view) {
+        bluetoothDevices.clear();
+        // 点击搜索周边设备，如果正在搜索，则暂停搜索
+        if (mBluetoothAdapter.isDiscovering()) {
+            mBluetoothAdapter.cancelDiscovery();
+        }
+        mBluetoothAdapter.startDiscovery();
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -163,26 +173,30 @@ public class ClientActivity extends Activity {
 //    private final UUID MY_UUID = UUID.fromString("00000100-0000-1000-8000-00805f9b34fb");
 
     private class ConnectThread extends Thread {
-        private final BluetoothSocket mmSocket;
-        private final BluetoothDevice mmDevice;
+        private BluetoothSocket mmSocket;
+        private BluetoothDevice mmDevice;
 
         public ConnectThread(BluetoothDevice device) {
+            mmDevice = device;
+            createSocket();
+        }
+
+        private void createSocket() {
             // Use a temporary object that is later assigned to mmSocket,
             // because mmSocket is final
             BluetoothSocket tmp = null;
-            mmDevice = device;
 
             // Get a BluetoothSocket to connect with the given BluetoothDevice
             mBluetoothAdapter.cancelDiscovery();
             try {
 //                device.fetchUuidsWithSdp();
-                Class<?> clazz = device.getClass();
-                Class<?>[] paramTypes = new Class<?>[] {Integer.TYPE};
+                Class<?> clazz = mmDevice.getClass();
+                Class<?>[] paramTypes = new Class<?>[]{Integer.TYPE};
 
                 Method m = clazz.getMethod("createRfcommSocket", paramTypes);
-                Object[] params = new Object[] {Integer.valueOf(21)};
+                Object[] params = new Object[]{Integer.valueOf(port)};
 
-                tmp = (BluetoothSocket) m.invoke(device, params);
+                tmp = (BluetoothSocket) m.invoke(mmDevice, params);
 //                fallbackSocket.connect();
 //                Method m =device.getClass().getMethod("createRfcommSocket",new Class[]{int.class});
 //                tmp = (BluetoothSocket) m.invoke(device,29);
@@ -191,9 +205,13 @@ public class ClientActivity extends Activity {
                 e.printStackTrace();
             }
             mmSocket = tmp;
+            if (isException) {
+                isException = false;
+                connect();
+            }
         }
 
-        public void run() {
+        public void connect() {
             // 判断当前是否还是正在搜索周边设备，如果是则暂停搜索
             // Cancel discovery because it will slow down the connection
 //            mBluetoothAdapter.cancelDiscovery();
@@ -207,15 +225,29 @@ public class ClientActivity extends Activity {
                 // Unable to connect; close the socket and get out
                 try {
                     mmSocket.close();
+                    isException = true;
+                    port--;
+                    if (port > 0) {
+                        createSocket();
+                    }
                 } catch (IOException closeException) {
                 }
-                return;
             }
+        }
 
-            // Do work to manage the connection (in a separate thread)
-//            manageConnectedSocket(mmSocket);
-            mConnectedThread = new ConnectedThread(mmSocket);
-            mConnectedThread.start();
+        boolean isException = false;
+        int port = 16;
+
+        public void run() {
+            // 判断当前是否还是正在搜索周边设备，如果是则暂停搜索
+            // Cancel discovery because it will slow down the connection
+//            mBluetoothAdapter.cancelDiscovery();
+            connect();
+
+            if (!isException) {
+                mConnectedThread = new ConnectedThread(mmSocket);
+                mConnectedThread.start();
+            }
         }
 
         /**
