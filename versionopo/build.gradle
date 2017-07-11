@@ -27,4 +27,5 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile librarys.appcompatv7
     compile librarys.design
+    compile project(':ffmpegandroid')
 }

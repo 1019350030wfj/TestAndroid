@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TestAndroid.iml" filepath="$PROJECT_DIR$/TestAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ffmpegandroid/ffmpegandroid.iml" filepath="$PROJECT_DIR$/ffmpegandroid/ffmpegandroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jaydenffmpeg/jaydenffmpeg.iml" filepath="$PROJECT_DIR$/jaydenffmpeg/jaydenffmpeg.iml" />
       <module fileurl="file://$PROJECT_DIR$/versionopo/versionopo.iml" filepath="$PROJECT_DIR$/versionopo/versionopo.iml" />
     </modules>
   </component>

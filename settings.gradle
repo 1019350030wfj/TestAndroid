@@ -1,1 +1,1 @@
-include ':versionopo'
+include ':versionopo', ':ffmpegandroid', ':jaydenffmpeg'

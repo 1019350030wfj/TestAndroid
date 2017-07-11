@@ -1,0 +1,60 @@
+中文编程书籍：
+
+Python  https://github.com/justjavac/free-programming-books-zh_CN
+
+
+书籍列表：
+https://www.douban.com/doulist/43272819/
+
+
+Android ：
+1、视频 ：
+[Android视频直播的实现](http://blog.csdn.net/huaxun66/article/details/53427771)
+
+[Android 多媒体框架](http://blog.csdn.net/column/details/12812.html?&page=1)
+
+编码和推流：有两种方案：http://blog.csdn.net/mr_sk/article/details/71083366
+一： 
+使用javacv来实现，最终也是用过ffmpeg来进行编码和推流，javacv实现到可以直接接收摄像头的帧数据 
+需要自己实现的代码只是打开摄像头，写一个SurfaceView进行预览，然后实现PreviewCallback将摄像头每一帧的数据交给javacv即可 
+javacv地址：https://github.com/bytedeco/javacv 
+demo地址：https://github.com/beautifulSoup/RtmpRecoder/tree/master
+
+二： 
+使用android自带的编码工具，可实现硬编码，这里有一个国内大神开源的封装很完善的的库yasea，第一种方法需要实现的Camera采集部分也一起封装好了，进行一些简单配置就可以实现编码推流，并且yasea目前已经直接支持摄像头的热切换，和各种滤镜效果 
+yasea地址（内置demo）：https://github.com/begeekmyfriend/yasea
+
+
+[音视频编解码、流媒体传输、流媒体服务器开发与研究](http://bashell.nodemedia.cn/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OpenGL NDk JNI  
+2、Https【编程安全系列-Https编程】（https://juejin.im/post/59599650f265da6c23286f0a）
+
+
+面试准备：
+1、掘金：我喜欢的【一年Android工作经验，一举拿下百度、网易、美团、小米、快手等Offer面经】
+2、抛物线的【HenCoder：给高级 Android 工程师的进阶手册】（https://juejin.im/post/59591e42f265da6c407350c0）
+
+
+
+3DMAX+Vray
+
+
+产品原型设计： Axure绘制原型
+
+
+Python web开发
+
