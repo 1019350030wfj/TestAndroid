@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/TestAndroid.iml" filepath="$PROJECT_DIR$/TestAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/ffmpegandroid/ffmpegandroid.iml" filepath="$PROJECT_DIR$/ffmpegandroid/ffmpegandroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/jaydenffmpeg/jaydenffmpeg.iml" filepath="$PROJECT_DIR$/jaydenffmpeg/jaydenffmpeg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modifyclassesimpl/modifyclassesimpl.iml" filepath="$PROJECT_DIR$/modifyclassesimpl/modifyclassesimpl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modifyclassesplugin/modifyclassesplugin.iml" filepath="$PROJECT_DIR$/modifyclassesplugin/modifyclassesplugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/officialandroiddemo/officialandroiddemo.iml" filepath="$PROJECT_DIR$/officialandroiddemo/officialandroiddemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/versionopo/versionopo.iml" filepath="$PROJECT_DIR$/versionopo/versionopo.iml" />
     </modules>
   </component>

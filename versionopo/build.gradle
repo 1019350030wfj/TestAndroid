@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+//apply plugin: 'modifyclasses'
+
 def configInfo = rootProject.ext.android
 def librarys = rootProject.ext.dependencies
 android {
@@ -17,9 +19,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        debug {
-            debuggable true
-        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    packagingOptions {
+        exclude 'AUTHORS' // will not include AUTHORS file
     }
 }
 
@@ -28,4 +33,5 @@ dependencies {
     compile librarys.appcompatv7
     compile librarys.design
     compile project(':ffmpegandroid')
+    compile project(':modifyclassesimpl')
 }

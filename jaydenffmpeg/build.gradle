@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
-
+def configInfo = rootProject.ext.android
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion configInfo.compileSdkVersion
+    buildToolsVersion configInfo.buildToolsVersion
 
     defaultConfig {
         applicationId "com.jayden.jaydenffmpeg"
