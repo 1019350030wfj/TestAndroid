@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\menu\\global.xml",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\res\\menu\\global.xml"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\menu\\test_drawer.xml",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\res\\menu\\test_drawer.xml"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\res\\menu\\menu_main.xml"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_video.xml",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\res\\menu\\menu_video.xml"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_main_drawer.xml",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\res\\menu\\activity_main_drawer.xml"
+    }
+]

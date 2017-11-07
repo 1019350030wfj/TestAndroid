@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    
+    <com.jayden.testandroid.customview.RadarView
+        android:id="@+id/radar_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:circle_color="#99aaff"
+        app:circle_colorx="#fd7293"
+        app:circle_colorxx="#fcb8cd"
+        app:circle_colorxxx="#fde9f2"
+        app:saner_color="#ffe6ee"
+        app:image_width="118dp"
+        app:circle_margin="15dp"
+        app:circle_width="1dp"
+        app:default_image="@drawable/icon_logo"
+        />
+
+</LinearLayout>

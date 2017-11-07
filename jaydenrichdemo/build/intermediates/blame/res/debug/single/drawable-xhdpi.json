@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\jaydenrichdemo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_login_confirm.png",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\jaydenrichdemo\\src\\main\\res\\drawable-xhdpi\\ic_login_confirm.png"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\jaydenrichdemo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_index_unsel.png",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\jaydenrichdemo\\src\\main\\res\\drawable-xhdpi\\ic_index_unsel.png"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\jaydenrichdemo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_person_unsel.png",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\jaydenrichdemo\\src\\main\\res\\drawable-xhdpi\\ic_person_unsel.png"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\jaydenrichdemo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_shop_unsel.png",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\jaydenrichdemo\\src\\main\\res\\drawable-xhdpi\\ic_shop_unsel.png"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\jaydenrichdemo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_group_unsel.png",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\jaydenrichdemo\\src\\main\\res\\drawable-xhdpi\\ic_group_unsel.png"
+    }
+]

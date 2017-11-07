@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">@color/white</color>
+    <color name="colorPrimary">@color/top_background</color>
+    <color name="colorPrimaryDark">@color/top_background</color>
+    <color name="color_dividing_line">#e3e3d8</color>
+    <color name="title_color_fragment">#515151</color>
+    <color name="top_background">#2ed3b8</color>
+    <color name="white">#ffffff</color>
+    <declare-styleable name="HWRadioImageView"><attr format="float" name="hwRadio"/></declare-styleable>
+    <dimen name="default_elevation">8dp</dimen>
+    <dimen name="fine_line_height">0.5dp</dimen>
+    <dimen name="height_title_fragment">53dp</dimen>
+    <dimen name="s5">18dp</dimen>
+    <dimen name="size_title_fragment">18sp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <string name="app_name">jaydenrich</string>
+    <string name="loading_no_network">你的网络开小差啦，点击刷新</string>
+    <style name="FineLineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/fine_line_height</item>
+        <item name="android:background">@color/color_dividing_line</item>
+    </style>
+</resources>

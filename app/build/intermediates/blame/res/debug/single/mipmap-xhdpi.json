@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_finance.png",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\res\\mipmap-xhdpi\\ic_finance.png"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_profile.png",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\res\\mipmap-xhdpi\\ic_profile.png"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_beauty_diary.png",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\res\\mipmap-xhdpi\\ic_beauty_diary.png"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_calendar.png",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\res\\mipmap-xhdpi\\ic_calendar.png"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_cloud.png",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\res\\mipmap-xhdpi\\ic_cloud.png"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_mail.png",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\res\\mipmap-xhdpi\\ic_mail.png"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_key.png",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\res\\mipmap-xhdpi\\ic_key.png"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_channel_edit.png",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\res\\mipmap-xhdpi\\ic_channel_edit.png"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_voice.png",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\res\\mipmap-xhdpi\\ic_voice.png"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_tag.png",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\res\\mipmap-xhdpi\\ic_tag.png"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_business_card.png",
+        "source": "G:\\All_Data\\Myself\\android_project\\TestAndroid\\app\\src\\main\\res\\mipmap-xhdpi\\ic_business_card.png"
+    }
+]
