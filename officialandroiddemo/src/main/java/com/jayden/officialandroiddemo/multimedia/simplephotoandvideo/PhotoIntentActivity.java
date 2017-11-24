@@ -7,6 +7,8 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -189,12 +191,13 @@ public class PhotoIntentActivity extends Activity {
             galleryAddPic();
             mCurrentPhotoPath = null;
         }
-
     }
 
     private void handleCameraVideo(Intent intent) {
         mVideoUri = intent.getData();
-        mVideoView.setVideoURI(mVideoUri);
+        Log.e("jayden",mVideoUri.toString());
+        mVideoView.setVideoPath(Environment.getExternalStorageDirectory ()+"/VID_20171108_101753.mp4");
+//        mVideoView.setVideoURI(mVideoUri);
         mImageBitmap = null;
         mVideoView.setVisibility(View.VISIBLE);
         mImageView.setVisibility(View.INVISIBLE);
@@ -234,6 +237,19 @@ public class PhotoIntentActivity extends Activity {
 
         mImageView = (ImageView) findViewById(R.id.imageView1);
         mVideoView = (VideoView) findViewById(R.id.videoView1);
+        mVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setOnInfoListener(new MediaPlayer.OnInfoListener() {
+                    @Override
+                    public boolean onInfo(MediaPlayer mp, int what, int extra) {
+                        if (what == MediaPlayer.MEDIA_INFO_VIDEO_RENDERING_START)
+                            mVideoView.setBackgroundColor(Color.TRANSPARENT);
+                        return true;
+                    }
+                });
+            }
+        });
         mImageBitmap = null;
         mVideoUri = null;
 

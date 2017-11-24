@@ -32,7 +32,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".api.plugin.View">
+            android:name=".api.media.MediaPlayerSample">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
