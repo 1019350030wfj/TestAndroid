@@ -32,7 +32,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".api.media.MediaPlayerSample">
+            android:name=".multimedia.audio.TestSoundPool">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

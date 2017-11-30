@@ -28,7 +28,7 @@ yasea地址（内置demo）：https://github.com/begeekmyfriend/yasea
 [音视频编解码、流媒体传输、流媒体服务器开发与研究](http://bashell.nodemedia.cn/)
 
 
-
+[ffmpeg入门、OpenGL](http://www.jianshu.com/u/141bda5f1c5c)
 
 
 
