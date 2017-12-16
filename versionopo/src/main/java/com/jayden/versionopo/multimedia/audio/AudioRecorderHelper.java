@@ -113,6 +113,9 @@ public class AudioRecorderHelper {
                         int ret = mAudioRecord.read(recordbuf, 0, recordbuf.length);
                         if (ret == AudioRecord.ERROR_INVALID_OPERATION || ret == AudioRecord.ERROR_BAD_VALUE)
                             break;
+                        if (mAudioFrameCapturedListener != null) {
+                            mAudioFrameCapturedListener.onAudioFrameCaptured(recordbuf);
+                        }
                         // 通过callManager的外部音频输入接口将音频采样数据传入内核
 //                        mAudioEncoder.encode(recordbuf);//编码
 //                    EMClient.getInstance().callManager().InputAudioData(recordbuf);//发给C++
@@ -156,5 +159,15 @@ public class AudioRecorderHelper {
 //            mAudioEncoder.release();
 //            mAudioEncoder = null;
 //        }
+    }
+
+    private OnAudioFrameCapturedListener mAudioFrameCapturedListener;
+
+    public void setOnAudioFrameCapturedListener(OnAudioFrameCapturedListener listener) {
+        mAudioFrameCapturedListener = listener;
+    }
+
+    public interface OnAudioFrameCapturedListener {
+        void onAudioFrameCaptured(byte[] audioData);
     }
 }

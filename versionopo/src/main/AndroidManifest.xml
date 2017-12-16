@@ -56,6 +56,7 @@
                 android:resource="@xml/livewallpaper"/>
         </service>
 
+        <activity android:name=".multimedia.audio.AudioCapture"/>
     </application>
 
 </manifest>

@@ -4,6 +4,8 @@ import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioTrack;
 
+import com.jayden.versionopo.util.ByteUtils;
+
 /**
  * Android 音频播放帮助类
  * Created by Administrator on 2017/11/30.
@@ -97,12 +99,13 @@ public class AudioPlayerHelper {
             while (!mPlayThreadExitFlag) {
                 try {
                     // 获取音频数据
-//                    byte[] data = EMClient.getInstance().callManager().FetchAudioPlayBuffer();
-//                    if (data != null && data.length > 0) {
-//                        //解码
+                    byte[] data = FetchAudioPlayBuffer();
+                    if (data != null && data.length > 0) {
+                        //解码
 //                        mAudioDecoder.decode(data);
-////                        mAudioTrack.write(data, 0, data.length);//解码成功,播放
-//                    }
+//                        mAudioTrack.write(data, 0, data.length);//解码成功,播放
+                        mAudioTrack.write(data, 0, data.length);//解码成功,放入缓冲区播放
+                    }
                 } catch (Exception e) {
                     break;
                 }
@@ -144,4 +147,33 @@ public class AudioPlayerHelper {
 //        }
     }
 
+    private byte[] mBytes;
+    /**
+     * 获取声音播放数据
+     *
+     * @return
+     */
+    public byte[] FetchAudioPlayBuffer() {
+        byte[] temp;
+        synchronized (AudioPlayerHelper.class) {
+            temp = mBytes;
+            mBytes = null;
+        }
+        return temp;
+    }
+
+    /**
+     * 从C++服务器获取音频数据，然后解码完的数据放入mBytes
+     *
+     * @param t
+     */
+    public void receiveAudioData(byte[] t) {
+        synchronized (AudioPlayerHelper.class) {
+            if (mBytes == null) {
+                mBytes = t;
+            } else {
+                mBytes = ByteUtils.byteMerger(mBytes, t);
+            }
+        }
+    }
 }
