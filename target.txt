@@ -28,7 +28,7 @@ yasea地址（内置demo）：https://github.com/begeekmyfriend/yasea
 [音视频编解码、流媒体传输、流媒体服务器开发与研究](http://bashell.nodemedia.cn/)
 
 
-
+[ffmpeg入门、OpenGL](http://www.jianshu.com/u/141bda5f1c5c)
 
 
 
@@ -47,6 +47,7 @@ OpenGL NDk JNI
 面试准备：
 1、掘金：我喜欢的【一年Android工作经验，一举拿下百度、网易、美团、小米、快手等Offer面经】
 2、抛物线的【HenCoder：给高级 Android 工程师的进阶手册】（https://juejin.im/post/59591e42f265da6c407350c0）
+3、androidNote ： https://github.com/GcsSloop/AndroidNote
 
 
 
@@ -57,4 +58,22 @@ OpenGL NDk JNI
 
 
 Python web开发
+
+
+
+性能优化：https://blog.mindorks.com/how-to-reduce-apk-size-in-android-2f3713d2d662
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -11,9 +11,9 @@
     android:paddingTop="@dimen/activity_vertical_margin">
 
     <Button
+        android:id="@+id/jayden"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="setCameraToWallPaper"
         android:layout_marginBottom="20dp"
         android:text="相机作为壁纸" />
 
