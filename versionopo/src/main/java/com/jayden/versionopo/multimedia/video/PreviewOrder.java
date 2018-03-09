@@ -16,30 +16,30 @@ import java.util.SortedSet;
 public class PreviewOrder {
 
     void adjustCameraParameters() {
-        SortedSet<Size> sizes = mPreviewSizes.sizes(mAspectRatio);
-        if (sizes == null) { // Not supported
-            mAspectRatio = chooseAspectRatio();
-            sizes = mPreviewSizes.sizes(mAspectRatio);
-        }
-        Size size = chooseOptimalSize(sizes);
-
-        // Always re-apply camera parameters
-        // Largest picture size in this ratio
-        final Size pictureSize = mPictureSizes.sizes(mAspectRatio).last();
-        if (mShowingPreview) {
-            mCamera.stopPreview();
-        }
-        mCameraParameters.setPreviewSize(size.getWidth(), size.getHeight());
-        mCameraParameters.setPictureSize(pictureSize.getWidth(), pictureSize.getHeight());
-        int rotation = calcCameraRotation(mDisplayOrientation);
-        Log.e("jayden","rotation = " + rotation);
-        Log.e("jayden","mDisplayOrientation = " + mDisplayOrientation);
-        mCameraParameters.setRotation(rotation);
-        setAutoFocusInternal(mAutoFocus);
-        setFlashInternal(mFlash);
-        mCamera.setParameters(mCameraParameters);
-        if (mShowingPreview) {
-            mCamera.startPreview();
-        }
+//        SortedSet<Size> sizes = mPreviewSizes.sizes(mAspectRatio);
+//        if (sizes == null) { // Not supported
+//            mAspectRatio = chooseAspectRatio();
+//            sizes = mPreviewSizes.sizes(mAspectRatio);
+//        }
+//        Size size = chooseOptimalSize(sizes);
+//
+//        // Always re-apply camera parameters
+//        // Largest picture size in this ratio
+//        final Size pictureSize = mPictureSizes.sizes(mAspectRatio).last();
+//        if (mShowingPreview) {
+//            mCamera.stopPreview();
+//        }
+//        mCameraParameters.setPreviewSize(size.getWidth(), size.getHeight());
+//        mCameraParameters.setPictureSize(pictureSize.getWidth(), pictureSize.getHeight());
+//        int rotation = calcCameraRotation(mDisplayOrientation);
+//        Log.e("jayden","rotation = " + rotation);
+//        Log.e("jayden","mDisplayOrientation = " + mDisplayOrientation);
+//        mCameraParameters.setRotation(rotation);
+//        setAutoFocusInternal(mAutoFocus);
+//        setFlashInternal(mFlash);
+//        mCamera.setParameters(mCameraParameters);
+//        if (mShowingPreview) {
+//            mCamera.startPreview();
+//        }
     }
 }

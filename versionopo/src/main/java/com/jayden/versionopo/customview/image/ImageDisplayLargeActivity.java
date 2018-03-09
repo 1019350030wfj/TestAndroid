@@ -29,6 +29,6 @@ public class ImageDisplayLargeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_imagedisplay_large);
         SubsamplingScaleImageView imageView = (SubsamplingScaleImageView)findViewById(R.id.imageView);
-        imageView.setImage(ImageSource.asset("zxdt.jpg"));
+        imageView.setImage(ImageSource.asset("hxswdt.jpg"));
     }
 }
