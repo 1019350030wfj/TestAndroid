@@ -6,6 +6,9 @@
                   android:required="true"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -14,7 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".multimedia.simplephotoandvideo.PhotoIntentActivity">
+        <activity android:name=".opengles.part1.PartOneActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
