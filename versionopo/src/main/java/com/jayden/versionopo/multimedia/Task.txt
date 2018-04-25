@@ -1,6 +1,9 @@
 《Android 音视频从入门到提高 —— 任务列表》
 
     1. 在 Android 平台绘制一张图片，使用至少 3 种不同的 API，ImageView，SurfaceView，自定义 View
+		A. ImageView直接调用设置图片的API
+		B. SurfaceHolder的lockCanvas()方法来锁定画布，然后在画布上面执行绘制操作，接着再解锁并显示在界面unlockCanvasAndPost(canvas)
+		C. 自定义view主要是利用Canvas来执行绘制操作。如drawBitmap（）
 
     2. 在 Android 平台使用 AudioRecord 和 AudioTrack API 完成音频 PCM 数据的采集和播放，并实现读写音频 wav 文件
 
@@ -45,3 +48,5 @@
     3. 《FFMPEG Tips》：http://ticktick.blog.51cto.com/823160/d-17
     4. 《Learn OpenGL 中文》：https://learnopengl-cn.readthedocs.io/zh/latest/
     5. 《Android Graphic 架构》：https://source.android.com/devices/graphics/
+	
+	## Android 音视频开发学习思路 ： http://www.cnblogs.com/renhui/p/7452572.html 
