@@ -6,9 +6,10 @@ buildscript {
         maven {
             url uri('./repo')
         }
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.1.2'
 //        classpath 'com.jayden:modifyclassesplugin:1.0.1'
 //        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
         // NOTE: Do not place your application dependencies here; they belong
@@ -19,6 +20,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        google()
     }
 }
 
