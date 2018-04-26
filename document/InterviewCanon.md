@@ -55,6 +55,37 @@ hprof-conv 1.hprof 2.hprof
 [MAT使用教程](https://help.eclipse.org/neon/index.jsp?topic=%2Forg.eclipse.mat.ui.help%2Fwelcome.html)
 
 
+## DP和SP的区别
+
+**概念：**
+1. DP=DIP（Density-Independent Pixel）密度无关像素，在Android中通常作为长度单位
+2. SP（Scale-Independent Pixel）缩放像素， 在Android中通常作为字体大小单位
+3. DPI（Dot Per Inch）每英寸上面的点
+4. PPI（Pixel Per Inch）每英寸上面的像素
+
+**计算：**
+1. 计算公式 dp = （dpi/160）px
+2. PPI= 屏幕对角线像素数/对角线长度 
+3. 160dpi的设备，1dp = 1px
+4. ldpi mdpi hdpi xhdpi xxhdpi 对应的dp和px比值 = 0.75：1：1.5：2：3
+
+**核心区别：**
+1. 主要区别在density和scaledDensity,可以通过源码TypedValue的applyDimension方法
+2. sp可以在运行时去改变，比如在手机端的设置中去改变字体大小
+
+
+## 多线程
+
+**生产者与消费者**
+
+```
+生产者：生产者往池子（内存缓冲区）添加资源，若池子满的话，就需要等待，只有当自己生产的东西能够放入池子
+消费者：消费者不断从池子获取资源，若池子空了，就需要等待，只有当池子的资源满足自己的需求
+```
+
+
+
+
 
 
 
