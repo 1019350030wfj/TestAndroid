@@ -84,6 +84,15 @@ hprof-conv 1.hprof 2.hprof
 ```
 
 
+## 数据结构
+
+### HashMap和HashTable的区别
+1. HashMap是非线程安全的，HashTable是线程安全的。所以在多线程环境可以使用HashTable
+2. HashMap允许key和value为null的值，而HashTable不允许key和value为null
+3. 单线程环境HashMap执行速度快于HashTable
+4. 数组初始化大小和扩容方式不同：HashTable默认初始化大小是11，而HashMap是16. 扩容为2*HashTable.size+1，2*HashMap.size
+5. key-value放在数组位置的计算方式不一样。 HashTable是直接以key的hashcode与数组大小取模。而HashMap是以key的hashcode计算新的hash值，然后再以这个hash与数组大小取模。
+
 
 
 
