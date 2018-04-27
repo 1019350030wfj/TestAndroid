@@ -33,5 +33,4 @@ dependencies {
     compile librarys.appcompatv7
     compile librarys.design
     compile project(':ffmpegandroid')
-    compile project(':modifyclassesimpl')
 }
