@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-//apply plugin: 'modifyclasses'
 
 def configInfo = rootProject.ext.android
 def librarys = rootProject.ext.dependencies
@@ -29,9 +28,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile librarys.appcompatv7
-    compile librarys.design
-    compile project(':ffmpegandroid')
-    compile project(':modifyclassesimpl')
+    api librarys.appcompatv7
+    api librarys.design
+    api project(':ffmpegandroid')
 }

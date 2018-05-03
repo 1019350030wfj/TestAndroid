@@ -1,1 +1,1 @@
-include ':versionopo', ':ffmpegandroid', ':jaydenffmpeg', ':modifyclassesplugin', ':modifyclassesimpl', ':officialandroiddemo'
+include ':versionopo', ':ffmpegandroid', ':jaydenffmpeg', ':officialandroiddemo'
