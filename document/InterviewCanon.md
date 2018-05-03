@@ -112,12 +112,48 @@ hprof-conv 1.hprof 2.hprof
 ### JVM 重排序机制
 
     通常程序都是顺序执行的，但是有时候为了不让内存操作速度慢于CPU运行速度所带来的CPU闲置的影响。虚拟机会按照一定的规则让后面的程序优于前面的程序执行。只要不影响程序逻辑结果。
-    
+
 ### JVM 原子性 可见性 有序性
 1. 原子性： 要么执行完毕要么不执行。 对基本数据类型的读取和赋值是原子操作
 2. 可见性： 多个线程访问同一个变量，一个线程对变量修改的值，在另一个线程能够立即看到改变后的值。 通过volatile、synchronized、lock能够保证共享变量的可见性
 3. 有序性： 即程序执行是按照代码先后顺序执行。可以通过synchronized、lock来保证程序执行的有序性
 4. volatile修饰的共享变量，线程访问都会到主存去获取最新值，它的工作内存暂时失效。
+
+### 什么是GC
+
+    是一种自动存储管理机制。 简单的说，就是一块被占用的内存区域在不需要使用的时候，就应该被释放，让出空间。
+    
+    Java堆分成三个部分： 年轻代（Eden、Survivor）、老年代、永久代
+    
+### GC会有什么影响
+
+    不管哪种算法，都会造成 stop-the-world。 也就是当在执行GC的过程，会导致所有线程都会被停止。
+
+### GC执行的时机
+1. 当应用程序空闲的时候，因为GC在优先级最低的线程中执行，所以应用忙时，GC线程不会被调用
+2. Java堆内存不足时，GC被调用。
+
+### GC的执行步骤
+1. 新创建的对象分配在年轻代的Eden中，执行一次Minor GC会把Eden区的没有被引用的对象清掉，有被引用的放入Servivor 0 中；
+2. 在执行一次Minor GC会把Eden区和Servivor 0 区的没有被引用的对象清除掉，有被引用的放入Servivor 1中，且Servivor 0放入Servivor 1中的对象年龄域增加；
+3. 在下一次Minor GC会把Eden区和Servivor 1区的没有被引用的对象清除掉，有被引用的放入Servivor 0中，且Servivor 1放入Servivor 0中的对象年龄域增加；
+4. 循环上面几次操作后（有的说是8次，有的说是16次），还保留的对象将被移入老年代中
+5. 老年代执行Major GC
+6. 也就是说一开始先在年轻代反复的清理，顽强不死的被移入老年代清理
+
+### String StringBuffer 和 StringBuilder
+1. String是字符串常量，StringBuffer和StringBuilder是字符串变量。对String变量的操作，实际都是在创建一个新的String对象，然后把指针指向新的对象。
+2. StringBuffer是线程安全的，StringBuilder是非线程安全的。因此单线程下尽量用StringBuilder，因为它的效率比StringBuffer高。
+3. String适用于少量的字符串操作，StringBuilder适用于在单线程下在字符缓冲区对字符串进行大量操作。
+
+### ==、 equals和hashcode的区别
+
+1. == 是运算符，通常用于比较基本数据类型是否相等。若是引用类型比较，则是比较他们的内存地址是否相等；
+2. equals()方法是Object类的一个方法，默认实现也是比较两个对象的内存地址是否相等，等同于“==”
+3. String 类是有对equals和hashcode进行重写，所以String类的equals方法比较的是字符串内容。
+4. hashcode默认是用对象的内存地址计算hash值
+
+
 
 
 
