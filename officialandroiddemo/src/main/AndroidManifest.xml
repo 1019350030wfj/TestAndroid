@@ -17,7 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".opengles.part1.IdotActivity">
+        <activity android:name=".bitoperation.BitOperationDemo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
