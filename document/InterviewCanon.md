@@ -141,6 +141,34 @@ hprof-conv 1.hprof 2.hprof
 1. bump-the-pointer： 因为Eden区内存是连续的，所以只要检测最后分配对象的末尾是否有足够的内存空间，大大加快了内存分配速度
 2. TLAB（Thread-Local Allocation Buffers），本地线程分配缓存区，对于多线程而言，将Eden区域分为若干段，每个线程拥有独立一段，互不影响；
 
+### 类加载机制ClassLoader
+**类加载器分类：**
+1. BootStrap 启动类加载器 -》 主要是加载JVM虚拟机内部的类， 应用是无法引用的
+2. Extension 扩展类加载器 -》 对JVM虚拟机扩展类的加载
+3. Application 应用类加载器 -》 java应用程序默认的加载器， 继承自Extention
+4. 自定义类加载器-> Android的DexClassLoader和PathClassLoader
+
+**什么时候加载，如何加载**
+1. jvm是按需加载的， 只有当我们要用到的时候才去加载
+2. 通过双亲委派模式，也就是都是先让父亲类加载器（Application-》Extention ， 当为null就用Bootstrap类加载器），当都没有报异常ClassNotFoundException
+3. 双亲委派模式的优势：避免重复加载类；安全性，防止核心api库被篡改（比如我们从网络加载了java.lang.Integer，而这个类已经在启动类加载器加载过了） 
+
+**原理**
+1. 实际理解了java文件到为什么能够被jvm运行这个过程，就可以很好的理解类加载机制；
+2. 首先java会被编译成class文件，然后再由类加载器按需加载的方式和利用双亲委派模式加载到jvm内存中
+3. 类加载器又分为四类，分别是Bootstrap启动加载器、Extension扩展类加载器、Application应用类加载器、自定义加载器
+4. 类加载器又是经过几个步骤才把类加载到jvm内存，分别是：加载、验证、准备、解析、初始化、使用、卸载
+
+**类加载的步骤**
+1. 加载： 通过类的全限定名加载类的二进制字节流；将静态数据结构的存储到jvm的方法区；在堆区生成class对象（二进制字节流-》class对象，由defineClass）;
+2. 验证： 文件格式验证（是否是class文件格式的规范）；元数据验证（语义分析是否符合java语言规范）；字节码验证；符号验证
+3. 准备： 正式为类变量分配内存和初始化默认值
+4. 解析： 类或接口的解析；字段解析；方法解析；接口方法解析；
+5. 初始化： 真正执行类中的java程序代码或者说是执行类构造器（）方法的过程
+
+### 参考资料
+[一看你就懂，超详细java中的ClassLoader详解](https://blog.csdn.net/briblue/article/details/54973413)
+
 ### String StringBuffer 和 StringBuilder
 1. String是字符串常量，StringBuffer和StringBuilder是字符串变量。对String变量的操作，实际都是在创建一个新的String对象，然后把指针指向新的对象。
 2. StringBuffer是线程安全的，StringBuilder是非线程安全的。因此单线程下尽量用StringBuilder，因为它的效率比StringBuffer高。
@@ -160,6 +188,7 @@ hprof-conv 1.hprof 2.hprof
 生产者：生产者往池子（内存缓冲区）添加资源，若池子满的话，就需要等待，只有当自己生产的东西能够放入池子
 消费者：消费者不断从池子获取资源，若池子空了，就需要等待，只有当池子的资源满足自己的需求
 ```
+
 **并发与并行**
 ```
 并行：多核多CPU或多处理器在同一时刻多个执行流共同执行
@@ -172,6 +201,11 @@ hprof-conv 1.hprof 2.hprof
 2. Thread实现Runnale接口， Runnale是接口，Thread是类不支持多继承
 3. Callable也是一个任务，不过它可以返回结果和当无法计算结果的时候会抛出异常
 
+## NDK
+1. Java->JNI->C/C++:  Java文件定义native本地方法，然后编写cpp或者c文件，方法名称为Java_包名_类名_方法名;
+ JNI的数据转C/C++(jstring->std::string: 先从jstring中通过getBytes（）获取jbyteArray； 然后将jbyteArray设置给std::string)
+ (jbyteArray->jbyte* ,通过GetByteArrayElements)
+2. jni里面获取java对象， 可以通过msgData = env->FindClass("com/onesoft/MsgData")获取类,env->GetMethodID(类名msgData,"方法名/构造函数<init>","方法签名如：（ZLjava/lang/String;[I）J") ->long fun (boolean n, String str, int[] arr); 
 
 
 
