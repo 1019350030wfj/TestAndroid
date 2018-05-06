@@ -105,7 +105,9 @@ hprof-conv 1.hprof 2.hprof
 
 ### JVM 重排序机制
 
-    通常程序都是顺序执行的，但是有时候为了不让内存操作速度慢于CPU运行速度所带来的CPU闲置的影响。虚拟机会按照一定的规则让后面的程序优于前面的程序执行。只要不影响程序逻辑结果。
+    通常程序都是顺序执行的，但是有时候为了不让内存操作速度慢于CPU运行速度所带来的CPU闲置的影响。
+    虚拟机会按照一定的规则让后面的程序优于前面的程序执行。只要不影响程序逻辑结果。
+    必须遵循happen-before原则， 也就是全面的操作结果对后面操作是可见的（有影响的），就必须遵循happen-before。 如果全面的操作对后面不影响，不可见，就无需遵循happen-before，也就是可以重排序
 
 ### JVM 原子性 可见性 有序性
 1. 原子性： 要么执行完毕要么不执行。 对基本数据类型的读取和赋值是原子操作
@@ -205,7 +207,11 @@ hprof-conv 1.hprof 2.hprof
 1. Java->JNI->C/C++:  Java文件定义native本地方法，然后编写cpp或者c文件，方法名称为Java_包名_类名_方法名;
  JNI的数据转C/C++(jstring->std::string: 先从jstring中通过getBytes（）获取jbyteArray； 然后将jbyteArray设置给std::string)
  (jbyteArray->jbyte* ,通过GetByteArrayElements)
-2. jni里面获取java对象， 可以通过msgData = env->FindClass("com/onesoft/MsgData")获取类,env->GetMethodID(类名msgData,"方法名/构造函数<init>","方法签名如：（ZLjava/lang/String;[I）J") ->long fun (boolean n, String str, int[] arr); 
+2. jni里面获取java对象， 可以通过msgData = env->FindClass("com/onesoft/MsgData")获取类,env->GetMethodID(类名msgData,"方法名/构造函数<init>","方法签名如：（ZLjava/lang/String;[I）J") ->long fun (boolean n, String str, int[] arr);
+
+## 设计模式
+1. 单例模式： [简述DCL失效原因，解决方法](https://blog.csdn.net/zhaojw_420/article/details/70477921)
+ 
 
 
 
