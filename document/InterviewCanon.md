@@ -205,9 +205,18 @@ hprof-conv 1.hprof 2.hprof
 1. Java->JNI->C/C++:  Java文件定义native本地方法，然后编写cpp或者c文件，方法名称为Java_包名_类名_方法名;
  JNI的数据转C/C++(jstring->std::string: 先从jstring中通过getBytes（）获取jbyteArray； 然后将jbyteArray设置给std::string)
  (jbyteArray->jbyte* ,通过GetByteArrayElements)
-2. jni里面获取java对象， 可以通过msgData = env->FindClass("com/onesoft/MsgData")获取类,env->GetMethodID(类名msgData,"方法名/构造函数<init>","方法签名如：（ZLjava/lang/String;[I）J") ->long fun (boolean n, String str, int[] arr); 
+2. jni里面获取java对象， 可以通过msgData = env->FindClass("com/onesoft/MsgData")获取类,env->GetMethodID(类名msgData,"方法名/构造函数<init>","方法签名如：（ZLjava/lang/String;[I）J") ->long fun (boolean n, String str, int[] arr);
 
+# Android
 
+## View相关
+ 
+ **自定义view如何保证高度和宽度自适应**
+ 1. view的获取默认大小，是没有区分EXACTLY和AT_MOST模式的，默认都是一样的大小
+ 2. 自定义view，可以设置一个期望的大小，然后判断是否是wrap_content属性值，是的话，取期望值与建议值的最小值，最大不能超过期望值；
+
+## Listview缓存
+1. Adapter的作用：listview是为了交互和展示数据，而数据来源就是由Adapter提供。避免了listview太重了，且Adapter是接口便于扩展（子类可以根据自己的逻辑去完成特定的功能、数据类型）
 
 
 
