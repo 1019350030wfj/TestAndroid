@@ -148,7 +148,7 @@ hprof-conv 1.hprof 2.hprof
 1. BootStrap 启动类加载器 -》 主要是加载JVM虚拟机内部的类， 应用是无法引用的
 2. Extension 扩展类加载器 -》 对JVM虚拟机扩展类的加载
 3. Application 应用类加载器 -》 java应用程序默认的加载器， 继承自Extention
-4. 自定义类加载器-> Android的DexClassLoader和PathClassLoader
+4. 自定义类加载器-> Android的DexClassLoader和PathClassLoader， 继承自ClassLoader，重写findClass方法（主要加载类的二进制字节流），然后由defineClass生成类对象
 
 **什么时候加载，如何加载**
 1. jvm是按需加载的， 只有当我们要用到的时候才去加载
@@ -164,7 +164,7 @@ hprof-conv 1.hprof 2.hprof
 **类加载的步骤**
 1. 加载： 通过类的全限定名加载类的二进制字节流；将静态数据结构的存储到jvm的方法区；在堆区生成class对象（二进制字节流-》class对象，由defineClass）;
 2. 验证： 文件格式验证（是否是class文件格式的规范）；元数据验证（语义分析是否符合java语言规范）；字节码验证；符号验证
-3. 准备： 正式为类变量分配内存和初始化默认值
+3. 准备： 正式为类变量分配内存和初始化默认值，比如 public static int value = 3。这时候value默认初始值为0
 4. 解析： 类或接口的解析；字段解析；方法解析；接口方法解析；
 5. 初始化： 真正执行类中的java程序代码或者说是执行类构造器（）方法的过程
 
@@ -211,6 +211,9 @@ hprof-conv 1.hprof 2.hprof
 
 ## 设计模式
 1. 单例模式： [简述DCL失效原因，解决方法](https://blog.csdn.net/zhaojw_420/article/details/70477921)
+
+1. RecyclerView的缓存机制优于ListView，屏外缓存无需重新绑定（缓存的是ViewHolder，flag），flag标志的是否需要重新绑定view
+2. 如果需要动画、频繁刷新、局部刷新，就可以用RecyclerView
  
 
 
