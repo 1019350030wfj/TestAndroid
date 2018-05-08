@@ -203,6 +203,14 @@ hprof-conv 1.hprof 2.hprof
 2. Thread实现Runnale接口， Runnale是接口，Thread是类不支持多继承
 3. Callable也是一个任务，不过它可以返回结果和当无法计算结果的时候会抛出异常
 
+**提高锁性能**
+1. 减少锁的持有时间，比如单利类，为什么不把synchronized放在方法上
+2. 减小锁的力度，
+3. 读写锁分离
+4. 锁分离，比如比如ConcurrentHashMap，利用的是锁分段技术（每一段实际）
+
+    synchronized关键字加锁的原理，其实是对对象加锁，不论你是在方法前加synchronized还是语句块前加，锁住的都是对象整体，但是ConcurrentHashMap的同步机制和这个不同，它不是加synchronized关键字，而是基于lock操作的，这样的目的是保证同步的时候，锁住的不是整个对象。
+
 ## NDK
 1. Java->JNI->C/C++:  Java文件定义native本地方法，然后编写cpp或者c文件，方法名称为Java_包名_类名_方法名;
  JNI的数据转C/C++(jstring->std::string: 先从jstring中通过getBytes（）获取jbyteArray； 然后将jbyteArray设置给std::string)
@@ -222,6 +230,8 @@ hprof-conv 1.hprof 2.hprof
 
 ## Listview缓存
 1. Adapter的作用：listview是为了交互和展示数据，而数据来源就是由Adapter提供。避免了listview太重了，且Adapter是接口便于扩展（子类可以根据自己的逻辑去完成特定的功能、数据类型）
+2. listview只会创建一屏的数据，当view不在屏幕的时候会被缓存到scrapview中，然后通过getScrapView方法获取缓存
+3. 第一次layout通过LayoutInflate的inflate加载一屏的view；第二次layout将view添加到ActiveViews缓存；当滑动的时候，将view缓存到scrapViews中
 
 
 
