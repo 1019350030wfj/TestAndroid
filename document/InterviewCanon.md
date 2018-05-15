@@ -82,6 +82,19 @@ hprof-conv 1.hprof 2.hprof
 4. 数组初始化大小和扩容方式不同：HashTable默认初始化大小是11，而HashMap是16. 扩容为2*HashTable.size+1，2*HashMap.size
 5. key-value放在数组位置的计算方式不一样。 HashTable是直接以key的hashcode与数组大小取模。而HashMap是以key的hashcode计算新的hash值，然后再以这个hash与数组大小取模。
 
+**ConcurrentHashMap&HashTable&Collections.synchronizedMap**
+1. 性能相对会高，利用锁分段技术，允许多线程同时操作非同一个segment；
+2. 写操作不会阻塞读线程
+3. 需要两次hash
+
+### ConcurrentHashMap在JDK1.7和1.8的区别
+1. 1.8之前Segment里面有Entry的table数组
+2. 1.8通过Node+CAS+synchronized
+3. 1.8put(key,value)方法，初始化table的大小，通过自旋方式、Thread.yield()和CAS来保证线程安全
+4. key的hash不小于0且没有在移动，则遍历链表，更新或者插入新节点
+5. 如果节点是TreeBin节点，说明是红黑树结构。 如果binCount大于等于8，则将链表结构转换为红黑树treeifyBin（）0
+
+
 ## JVM
 ### 结构
 1. 类加载系统：负责加载文件系统或来自网络的class文件
@@ -217,7 +230,10 @@ hprof-conv 1.hprof 2.hprof
 3. 公平锁不会造成饿死现象，效率比较低；非公平锁会时有的线程饿死或者等待很久，但效率比较高；
 
 **悲观锁和乐观锁**
-1. 
+1. 悲观锁，总是考虑最坏情况，每次去拿数据都认为别人会修改，所以在访问数据时会加锁，其他线程就会被阻塞直到它获得锁
+2. 乐观锁，顾名思义就是很乐观，每次拿数据都认为别人不会修改（没有并发冲突而去完成某项操作），所以不会上锁。但它在更新的时候会去判断一下在此期间是否被人有去修改数据。
+
+[Java并发问题--乐观锁与悲观锁以及乐观锁的一种实现方式-CAS](https://www.cnblogs.com/qjjazry/p/6581568.html)
 
 ## NDK
 1. Java->JNI->C/C++:  Java文件定义native本地方法，然后编写cpp或者c文件，方法名称为Java_包名_类名_方法名;
@@ -245,4 +261,8 @@ hprof-conv 1.hprof 2.hprof
 3. 第一次layout通过LayoutInflate的inflate加载一屏的view；第二次layout将view添加到ActiveViews缓存；当滑动的时候，将view缓存到scrapViews中
 
 
+线程安全，就是保证在多线程编程的情况下，多个线程同时访问
+shutdownnow 和 shutdown的区别：
 
+网络这块只是单纯的了解：
+http的概念： 超文本传输协议， 是客户端向服务器端发送请求

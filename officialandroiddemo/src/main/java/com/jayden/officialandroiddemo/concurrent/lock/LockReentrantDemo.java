@@ -10,7 +10,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * Created by Jayden on 2018/5/14.
+ * Created by Jayden on 2018/4/14.
  */
 public class LockReentrantDemo extends BaseTextviewActivity {
     @Override
