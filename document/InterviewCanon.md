@@ -235,6 +235,11 @@ hprof-conv 1.hprof 2.hprof
 
 [Java并发问题--乐观锁与悲观锁以及乐观锁的一种实现方式-CAS](https://www.cnblogs.com/qjjazry/p/6581568.html)
 
+**线程安全和非线程安全**
+1. 线程安全：当多个线程同时操作某类或者修改某个数据，如果数据是正确的，那么就是线程安全的；
+2. 非线程安全： 当多个线程同时操作某个类或者修改某个数据，如果数据出错，那么我们就说这个是非线程安全的；
+
+
 ## NDK
 1. Java->JNI->C/C++:  Java文件定义native本地方法，然后编写cpp或者c文件，方法名称为Java_包名_类名_方法名;
  JNI的数据转C/C++(jstring->std::string: 先从jstring中通过getBytes（）获取jbyteArray； 然后将jbyteArray设置给std::string)
