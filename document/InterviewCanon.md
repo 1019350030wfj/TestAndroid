@@ -260,6 +260,11 @@ hprof-conv 1.hprof 2.hprof
  1. view的获取默认大小，是没有区分EXACTLY和AT_MOST模式的，默认都是一样的大小
  2. 自定义view，可以设置一个期望的大小，然后判断是否是wrap_content属性值，是的话，取期望值与建议值的最小值，最大不能超过期望值；
 
+## 事件分发机制
+1. android事件分发主要涉及到这几个对象（Activity、ViewGroup、View），事件由activity先接收到，然后传递给window、window到ViewGroup、viewgroup到view；
+2. 传递过程中主要有dispatchTouchEvent、onInterceptTouchEvent、onTouchEvent这三个方法，activity有分发和处理两个事件，ViewGroup才有拦截方法，它负责判断是否拦截，如果拦截了就自己处理，不拦截就分发给它的子view；
+3. 总的流程，就是activity接收到事件发送给window，window发送给decorview，也就是viewgroup，viewgroup判断是否需要拦截，如果拦截的话，就调用自己的onTouchEvent来处理，如果不拦截就调用子view的dispatchTouchEvent；
+
 ## Listview缓存
 1. Adapter的作用：listview是为了交互和展示数据，而数据来源就是由Adapter提供。避免了listview太重了，且Adapter是接口便于扩展（子类可以根据自己的逻辑去完成特定的功能、数据类型）
 2. listview只会创建一屏的数据，当view不在屏幕的时候会被缓存到scrapview中，然后通过getScrapView方法获取缓存
@@ -268,6 +273,31 @@ hprof-conv 1.hprof 2.hprof
 
 线程安全，就是保证在多线程编程的情况下，多个线程同时访问
 shutdownnow 和 shutdown的区别：
+
+# 网络相关
+ 
+## 断点续传
+1. 客户端向服务器端发送请求，获取文件大小，然后客户端根据文件大小分段；
+2. 每段请求根据http1.1的range头部（range:bytes start-end）
+3. 客户端再用RandomAccessFile类将获得的数据存储到文件
+
+## ETag和Last-Modify的区别
+1. Etag更能准确的表明请求的数据内容是否有变化
+2. Last-Modify标识的是文件的最后一次修改时间，且是秒s级别，存在问题： 有的服务器没有办法获得文件的最后修改事件； 有的文件在1s内修改多次
+
+## http状态码
+1. 100表示客户端应该继续请求；
+2. 200表示客户端请求成功
+3. 206表示客户端已经请求了部分内容，断点续传中用到
+4. 304表示请求的内容没有修改 not modify， 缓存中用到
+5. 404表示not found 
+6. 500表示服务器内部错误
+
+## http缓存
+1. 客户端第一次向服务器发送请求，服务器会响应对应的数据和缓存规则（在响应头部Expires Cache-Control、Etag、Last-Modify）
+2. 第二次向服务器请求会携带头部信息（If-None_match,If-modify-since），然后服务器根据头部信息判断数据是否有效未过期
+3. 如果是有效的就返回304，告诉客户端直接使用缓存，好处是，响应报文大小很小可以达到几B，且可以大大降低服务器的负担
+4. 如果是无效的就返回200，和最新的资源
 
 网络这块只是单纯的了解：
 http的概念： 超文本传输协议， 是客户端向服务器端发送请求
