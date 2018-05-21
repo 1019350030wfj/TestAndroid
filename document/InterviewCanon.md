@@ -184,6 +184,8 @@ hprof-conv 1.hprof 2.hprof
 ### 参考资料
 [一看你就懂，超详细java中的ClassLoader详解](https://blog.csdn.net/briblue/article/details/54973413)
 
+[基于栈的虚拟机 VS 基于寄存器的虚拟机](https://blog.csdn.net/dashuniuniu/article/details/50347149)
+
 ### String StringBuffer 和 StringBuilder
 1. String是字符串常量，StringBuffer和StringBuilder是字符串变量。对String变量的操作，实际都是在创建一个新的String对象，然后把指针指向新的对象。
 2. StringBuffer是线程安全的，StringBuilder是非线程安全的。因此单线程下尽量用StringBuilder，因为它的效率比StringBuffer高。
@@ -298,6 +300,21 @@ shutdownnow 和 shutdown的区别：
 2. 第二次向服务器请求会携带头部信息（If-None_match,If-modify-since），然后服务器根据头部信息判断数据是否有效未过期
 3. 如果是有效的就返回304，告诉客户端直接使用缓存，好处是，响应报文大小很小可以达到几B，且可以大大降低服务器的负担
 4. 如果是无效的就返回200，和最新的资源
+
+## OSI模型和TCP/IP模型
+1. 物理层 数据链路层 网络层 传输层 会话层 展示层 应用层
+2. 网络接口层 互联网层 传输层 应用层 
+
+## http和https区别
+[HTTPS和HTTP的区别](https://blog.csdn.net/blackplus28/article/details/80373313)
+1. https是基于安全套接字层的超文本传输协议： HTTPS+SSL
+2. 端口号：HTTPS默认端口号443， HTTP：80
+3. 数据加密： HTTPS数据是加密的， HTTP数据是明文的
+4. 证书： HTTPS需要证书， HTTP不需要证书
+
+**如何工作**
+1. http：先建立tcp链接， 然后客户端向服务器发送请求报文， 服务器响应客户端相关数据，关闭tcp连接
+2. https： 通过验证服务器， 证书，加密算法和密码等建立SSL，接着HTTP基于该SSL进行连接和传输数据
 
 # 第三方库
 ## EventBus
