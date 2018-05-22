@@ -273,7 +273,7 @@ hprof-conv 1.hprof 2.hprof
 3. 第一次layout通过LayoutInflate的inflate加载一屏的view；第二次layout将view添加到ActiveViews缓存；当滑动的时候，将view缓存到scrapViews中
 
 
-线程安全，就是保证在多线程编程的情况下，多个线程同时访问
+线程安全，就是保证在多线程编程的情况下，多个线程同时访问同一代码，不会造成错误行为，任然是我们预知的状态结果。
 shutdownnow 和 shutdown的区别：
 
 # 网络相关
