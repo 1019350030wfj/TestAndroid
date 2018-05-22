@@ -31,4 +31,5 @@ dependencies {
     api librarys.appcompatv7
     api librarys.design
     api project(':ffmpegandroid')
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
