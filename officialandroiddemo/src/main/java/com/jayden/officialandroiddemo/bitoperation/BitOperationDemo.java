@@ -49,5 +49,7 @@ public class BitOperationDemo extends Activity {
         TextView textView = new TextView(this);
         setContentView(textView);
         textView.setText(builder.toString());
+
+        textView.setText("非操作+"+(~1));
     }
 }

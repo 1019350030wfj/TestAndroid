@@ -184,6 +184,8 @@ hprof-conv 1.hprof 2.hprof
 ### 参考资料
 [一看你就懂，超详细java中的ClassLoader详解](https://blog.csdn.net/briblue/article/details/54973413)
 
+[基于栈的虚拟机 VS 基于寄存器的虚拟机](https://blog.csdn.net/dashuniuniu/article/details/50347149)
+
 ### String StringBuffer 和 StringBuilder
 1. String是字符串常量，StringBuffer和StringBuilder是字符串变量。对String变量的操作，实际都是在创建一个新的String对象，然后把指针指向新的对象。
 2. StringBuffer是线程安全的，StringBuilder是非线程安全的。因此单线程下尽量用StringBuilder，因为它的效率比StringBuffer高。
@@ -260,14 +262,65 @@ hprof-conv 1.hprof 2.hprof
  1. view的获取默认大小，是没有区分EXACTLY和AT_MOST模式的，默认都是一样的大小
  2. 自定义view，可以设置一个期望的大小，然后判断是否是wrap_content属性值，是的话，取期望值与建议值的最小值，最大不能超过期望值；
 
+## 事件分发机制
+1. android事件分发主要涉及到这几个对象（Activity、ViewGroup、View），事件由activity先接收到，然后传递给window、window到ViewGroup、viewgroup到view；
+2. 传递过程中主要有dispatchTouchEvent、onInterceptTouchEvent、onTouchEvent这三个方法，activity有分发和处理两个事件，ViewGroup才有拦截方法，它负责判断是否拦截，如果拦截了就自己处理，不拦截就分发给它的子view；
+3. 总的流程，就是activity接收到事件发送给window，window发送给decorview，也就是viewgroup，viewgroup判断是否需要拦截，如果拦截的话，就调用自己的onTouchEvent来处理，如果不拦截就调用子view的dispatchTouchEvent；
+
 ## Listview缓存
 1. Adapter的作用：listview是为了交互和展示数据，而数据来源就是由Adapter提供。避免了listview太重了，且Adapter是接口便于扩展（子类可以根据自己的逻辑去完成特定的功能、数据类型）
 2. listview只会创建一屏的数据，当view不在屏幕的时候会被缓存到scrapview中，然后通过getScrapView方法获取缓存
 3. 第一次layout通过LayoutInflate的inflate加载一屏的view；第二次layout将view添加到ActiveViews缓存；当滑动的时候，将view缓存到scrapViews中
 
 
-线程安全，就是保证在多线程编程的情况下，多个线程同时访问
+线程安全，就是保证在多线程编程的情况下，多个线程同时访问同一代码，不会造成错误行为，任然是我们预知的状态结果。
 shutdownnow 和 shutdown的区别：
 
-网络这块只是单纯的了解：
-http的概念： 超文本传输协议， 是客户端向服务器端发送请求
+# 网络相关
+ 
+## 断点续传
+1. 客户端向服务器端发送请求，获取文件大小，然后客户端根据文件大小分段；
+2. 每段请求根据http1.1的range头部（range:bytes start-end）
+3. 客户端再用RandomAccessFile类将获得的数据存储到文件
+
+## ETag和Last-Modify的区别
+1. Etag更能准确的表明请求的数据内容是否有变化
+2. Last-Modify标识的是文件的最后一次修改时间，且是秒s级别，存在问题： 有的服务器没有办法获得文件的最后修改事件； 有的文件在1s内修改多次
+
+## http状态码
+1. 100表示客户端应该继续请求；
+2. 200表示客户端请求成功
+3. 206表示客户端已经请求了部分内容，断点续传中用到
+4. 304表示请求的内容没有修改 not modify， 缓存中用到
+5. 404表示not found 
+6. 500表示服务器内部错误
+
+## http缓存
+1. 客户端第一次向服务器发送请求，服务器会响应对应的数据和缓存规则（在响应头部Expires Cache-Control、Etag、Last-Modify）
+2. 第二次向服务器请求会携带头部信息（If-None_match,If-modify-since），然后服务器根据头部信息判断数据是否有效未过期
+3. 如果是有效的就返回304，告诉客户端直接使用缓存，好处是，响应报文大小很小可以达到几B，且可以大大降低服务器的负担
+4. 如果是无效的就返回200，和最新的资源
+
+## OSI模型和TCP/IP模型
+1. 物理层 数据链路层 网络层 传输层 会话层 展示层 应用层
+2. 网络接口层 互联网层 传输层 应用层 
+
+## http和https区别
+[HTTPS和HTTP的区别](https://blog.csdn.net/blackplus28/article/details/80373313)
+1. https是基于安全套接字层的超文本传输协议： HTTPS+SSL
+2. 端口号：HTTPS默认端口号443， HTTP：80
+3. 数据加密： HTTPS数据是加密的， HTTP数据是明文的
+4. 证书： HTTPS需要证书， HTTP不需要证书
+
+**如何工作**
+1. http：先建立tcp链接， 然后客户端向服务器发送请求报文， 服务器响应客户端相关数据，关闭tcp连接
+2. https： 通过验证服务器， 证书，加密算法和密码等建立SSL，接着HTTP基于该SSL进行连接和传输数据
+
+# 第三方库
+## EventBus
+1. 定义一个消息事件； 在需要用到的地方注册并申明一个此消息事件的方法； post这个消息事件表示分发；
+2. 注册到哪里？又是怎么被触发到我们申明的方法的？
+3. 以类为键然后所有订阅的方法为值， 所有订阅方法又是以方法名+消息事件类型为键，然后以消息事件为值
+4. 注册的时候，通过反射遍历所有订阅方法，然后存到List<SubscriptionMethod>,subscriptionMethod里面包含方法名，消息事件类型，线程模式等， 接着以消息类型为键值存储所有的订阅者（activity+subscriptionMethod）
+5. 以消息事件类型为键存储着所有订阅的对象， 当post的时候，就以此消息事件为key获取所有订阅的对象，接着以反射的方式调用回去
+6. 5中线程模式：MAIN 在主线程运行， ASYN 与发送线程不一样的线程， POSTING与发送线程在同一个线程， BACKGROUND 如果发送线程在子线程就直接运行，如果在主线程就创建， MAIN_ORDER也是发送到主线程
